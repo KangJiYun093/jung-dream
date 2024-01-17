@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세보기</title>
+    <link rel="stylesheet" href="../../static/css/order/product-detail.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pdtHead">
+			<div class="thumbArea">
+				<p class="thumb"><img src="/sanghafarm_Data/upload/shop/product/202006/D0006239_2020061909434980024.jpg" id="product_img" alt=""></p>
+				<p class="icon">
+					<span></span>
+				</p>
+				<!-- <ul>
+
+					<li><a href="#none" onclick="$('#product_img').attr('src', '/sanghafarm_Data/upload/shop/product/202006/D0006239_2020061909434980024.jpg')"><img src="/sanghafarm_Data/upload/shop/product/202006/D0006239_2020061909434980024.jpg" alt=""></a></li>
+
+				</ul> -->
+			</div><!-- //thumbArea -->
+			<form name="cartForm" id="cartForm" method="post">
+				<input type="hidden" name="mode" value="CREATE">
+				<input type="hidden" name="pid" value="D0006239">
+				<input type="hidden" name="order_yn" value="N">
+			<div class="pdtInfo">
+				<ul class="sns">
+					<li class="facebook"><a href="#none" onclick="sendSns('facebook');return false;">페이스북</a></li>
+					<li class="twitter"><a href="#none" onclick="sendSns('twitter');return false;">트위터</a></li>
+<!-- 					<li class="kakao"><a href="#none" onclick="shareStory();return false;">카카오스토리</a></li> -->
+					<li class="kakao"><a href="#none" onclick="sendSns('kakao');return false;">카카오스토리</a></li>
+				</ul>
+				<h1>[지정일발송]신비복숭아 1.7kg내외(12과)</h1>
+				<p class="summary">백도 맛의 천도복숭아</p>
+				<p class="price">
+					<strong>26,000</strong>원
+
+				</p>
+				<p class="original">
+				
+				</p>
+				<dl>
+					<dt>판매단위</dt><dd>1.7kg내외(850g*2팩, 총 12과)</dd>
+					<dt>중량/용량</dt><dd>1.7kg내외(850g*2팩, 총 12과)</dd>
+
+					<dt>원산지</dt><dd>국내산</dd>
+
+
+
+
+					<dt>수량선택</dt><dd>품절</dd>						 
+
+
+					<dt class="option">배송일지정</dt>
+					<dd>
+						<select name="delivery_date" title="배송일 선택">
+<!-- 							<option value="">배송일 선택</option> -->
+
+							<option value="2024.01.18">2024.01.18</option>
+
+							<option value="2024.01.19">2024.01.19</option>
+
+							<option value="2024.01.20">2024.01.20</option>
+
+							<option value="2024.01.22">2024.01.22</option>
+
+							<option value="2024.01.23">2024.01.23</option>
+
+							<option value="2024.01.24">2024.01.24</option>
+
+							<option value="2024.01.25">2024.01.25</option>
+
+							<option value="2024.01.26">2024.01.26</option>
+
+							<option value="2024.01.27">2024.01.27</option>
+
+							<option value="2024.01.29">2024.01.29</option>
+
+						</select>
+					</dd>
+
+					<dt class="total">총 상품 금액</dt><dd class="total"><strong><span id="total_price">26,000</span></strong>원</dd>
+				</dl>
+				<!--미성년자 제한 표시 -->
+
+				<div class="btnArea">
+
+					<!-- 2018.03.30 버튼 수정 -->
+					<!-- <span><em class="btnTypeA sizeXL regularBtn">품절</em></span> -->
+					<span><em class="btnTypeA sizeXL">품절</em></span>
+				</div>
+
+			</div>
+			</form>
+		</div>
+    </div>
+</body>
+</html>
