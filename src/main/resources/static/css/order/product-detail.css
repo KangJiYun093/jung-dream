@@ -230,8 +230,10 @@ select option {
     border-radius: 5px;
 }
 
-.product-information .btnArea span em, .product-information .btnArea span a {
+.product-information .btnArea span em, .product-information .btnArea span button {
     width: 100%;
     min-width: 1px;
     margin: 0;
+    border: 0;
+    cursor: pointer;
 }
