@@ -1,0 +1,40 @@
+ul {
+
+}
+
+.goods-list{
+    overflow: hidden;
+    list-style: none;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.goods{
+    display: list-item;
+    text-align: -webkit-match-parent;
+    height: 300px;
+    width: 250px;
+}
+
+
+.goods-list li>a {
+    color: #666;
+    text-decoration: none;
+}
+
+.thumb{
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    height: 250px;
+}
+
+img{
+    width:250px;
+    
+}
+
