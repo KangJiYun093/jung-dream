@@ -1,0 +1,310 @@
+body, table, input, select, textarea {
+    font-family: 'ns','맑은 고딕','Malgun Gothic','NanumGothic','Dotum','돋움','gulim','굴림',Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: #666;
+}
+
+form, input, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0 !important;
+}
+
+legend, caption {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+input[type=text], input[type=file], input[type=password] {
+    box-sizing: content-box;
+    height: 28px;
+    padding: 0 10px;
+    margin: 0;
+    border: 1px solid #c4c4c4;
+    line-height: 28px;
+    background: #fff;
+}
+
+select {
+    height: 30px;
+    padding: 0 35px 0 10px;
+    margin: 0;
+    border: 1px solid #c4c4c4;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff url(https://www.sanghafarm.co.kr/images/btn/btn_arrow.gif) no-repeat 100% 50%;
+}
+
+input +label {
+    margin-left: 4px;
+}
+
+input[type=checkbox] {
+    width: 24px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: middle;
+    appearance: none;
+    background: url(https://www.sanghafarm.co.kr/images/common/ico_check11.png) no-repeat 0 0;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.container {
+    width: 1100px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+}
+
+.order-title {
+    margin-bottom: 60px;
+    border-bottom: 3px solid #e5e5e5;
+}
+
+.order-title h1 {
+    height: 50px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 33px;
+    color: #332f21;
+}
+
+h2.order-content-title {
+    margin: 60px 0 15px;
+    font-size: 18px;
+    line-height: 19px;
+    color: #332f21;
+}
+
+.required {
+    font-size: 12px !important;
+}
+
+h2.order-content-title .required {
+    margin-left: 10px;
+    color: #F44336;
+}
+
+h2.order-content-title .required em {
+    color: #F44336;
+}
+
+.order-content-table {
+    width: 100%;
+    table-layout: fixed;
+    border-top: 2px solid #828282;
+}
+
+.order-content-table tr {
+    border-bottom: 1px dotted #d9d9d9;
+}
+
+.order-content-table th {
+    padding: 16px 0 16px 20px;
+    color: #332f21;
+    line-height: 18px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.order-content-table th em {
+    color: #F44336;
+}
+
+.order-content-table td {
+    height: 30px;
+    padding: 10px 0;
+}
+
+.order-content-table td >* {
+    vertical-align: middle;
+}
+
+select option {
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.order-content-table td input +label {
+    margin-right: 30px;
+}
+
+.btnTypeA {
+    display: inline-block;
+    min-width: 90px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff !important;
+    font-size: 13px;
+    font-family: 'nsb';
+    box-sizing: border-box;
+    background: #817366;
+    border: 0;
+}
+
+.order-list {
+    width: 100%;
+    border-top: 2px solid #828282;
+    border-bottom: 1px solid #d9d9d9;
+    table-layout: fixed;
+    border-top-color: #59621d;
+    border-bottom: 2px solid #828282;
+}
+
+.order-list thead th {
+    height: 50px;
+    border-bottom: 1px solid #828282;
+    text-align: center;
+    color: #332f21;
+    line-height: 50px;
+}
+
+.order-list thead th {
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+}
+
+.order-list tbody td {
+    padding: 16px 0 15px;
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    line-height: 18px;
+    text-align: center;
+}
+
+.vt {
+    vertical-align: top !important;
+}
+
+.order-list tbody th, .order-list tbody td {
+    padding: 20px 0;
+}
+
+.order-list tbody tr:first-child th, .order-list tbody tr:first-child td {
+    border-top: 0;
+}
+
+.opt {
+    position: relative;
+    padding-left: 13px;
+    margin-top: 3px;
+    font-family: 'ns';
+    font-size: 12px;
+    color: #939393;
+}
+
+.order-list tbody td:first-child {
+    border-left-width: 0;
+}
+
+.order-list .price {
+    color: #59621d;
+    font-size: 12px;
+}
+
+.payment {
+    margin: 60px 0;
+}
+
+.total-price {
+    padding: 35px 0;
+    margin: 60px 0;
+    border: 3px solid #59621d;
+    text-align: center;
+    font-family: 'nsb';
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.total-price span {
+    vertical-align: middle;
+}
+
+.total-price em {
+    color: #332f21;
+    font-size: 12px;
+}
+
+.total-price strong {
+    font-size: 22px;
+}
+
+.total-price span.math {
+    margin: 0 15px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    background: #c4c4c4;
+    text-align: center;
+    font-family: 'ns';
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.total-price .total {
+    color: #332f21;
+}
+
+.fontTypeA {
+    color: #59621d !important;
+}
+
+.total-price .total em.fontTypeA strong {
+    font-size: 28px;
+}
+
+.btnArea {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btnTypeB {
+    display: inline-block;
+    min-width: 90px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff !important;
+    font-size: 13px;
+    font-family: 'nsb';
+    box-sizing: border-box;
+    background: #59621d;
+    border: 0;
+}
+
+.sizeXL {
+    min-width: 180px;
+    height: 54px;
+    padding: 0;
+    margin: 0 1px;
+    line-height: 54px;
+    font-size: 20px;
+    border-radius: 3px;
+}
