@@ -45,10 +45,9 @@ select {
     border: 1px solid #c4c4c4;
     text-align: center;
     vertical-align: middle;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background: #fff url(https://www.sanghafarm.co.kr/images/btn/btn_arrow.gif) no-repeat 100% 50%;
+    cursor: pointer;
 }
 
 input +label {
@@ -64,11 +63,16 @@ input[type=checkbox] {
     vertical-align: middle;
     appearance: none;
     background: url(https://www.sanghafarm.co.kr/images/common/ico_check11.png) no-repeat 0 0;
+    cursor: pointer;
 }
 
 a {
     color: #666;
     text-decoration: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container {
@@ -208,7 +212,7 @@ select option {
     border-top: 0;
 }
 
-.opt {
+.order-content {
     position: relative;
     padding-left: 13px;
     margin-top: 3px;
@@ -277,6 +281,23 @@ select option {
 
 .total-price .total em.fontTypeA strong {
     font-size: 28px;
+}
+
+.pay-way {
+    padding: 15px 0 15px 60px;
+    border: 1px solid #828282;
+    font-size: 14px;
+    text-align: center;
+}
+
+.pay-way p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pay-check-container {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .btnArea {
