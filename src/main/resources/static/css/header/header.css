@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+#header2 {
+  position: relative;
+  width: 100%;
+  z-index: 50;
+  height: 121px;
+  background: #fff;
+}
+
+.logo {
+  margin: 20px auto 0 auto;
+  width: 1200px;
+}
+
+.shopping {
+  left: 200px;
+  width: 1000px;
+}
+
+div{
+  font-weight: normal;
+}
+
+p, ul{
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.mainNav .all{
+  display: block;
+  float: left;
+}
+
+#header2 #gnb .shopping >ul {
+  position: relative;
+  float: left;
+  width: 800px;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+#header2 .shopping >ul >li {
+  position: relative;
+  float: left;
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+#header2 .shopping >ul >li>a {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  padding-top: 14px;
+  font-size: 18px;
+  font-family: 'MaruBuriBold';
+  text-decoration-line: none; /* 밑줄 제거 */
+}
+
+#header2 .mainNav >ul a {
+  color: #3b3b3b;
+}
+
+#header2 .mainNav .all >a span {
+  padding-left: 38px;
+}
+
