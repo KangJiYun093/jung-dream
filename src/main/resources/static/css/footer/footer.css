@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+body {
+  font-family: 'ns','맑은 고딕','Malgun Gothic','NanumGothic','Dotum','돋움','gulim','굴림',Helvetica,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #666;
+}
+
+#footer{
+  background-color: #f2f2f2;
+}
+
+#footer .logo {
+  position: absolute;
+  /* left: 0; */
+  
+  top: 62px;
+}
+
+.wrap {
+  position: relative;
+  width: 990px;
+  padding: 40px 0 40px 210px;
+  margin: 0 auto;
+}
+
+.contact {
+  margin: auto;
+  position: relative;
+  width: 550px;
+}
+
+div{
+  font-weight: normal;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
+.contact p span {
+  display: inline-block;
+  line-height: 21px;
+}
+
+.contact p span+span:before {
+  content: "|";
+  margin: 0 8px 0 6px;
+}
