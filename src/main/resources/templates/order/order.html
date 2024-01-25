@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 페이지</title>
+    <link rel="stylesheet" href="../../static/css/order/order.css">
+</head>
+<body>
+    <div class="container">
+        <form name="" id="" method="" action="">
+            <div class="order-title">
+                <h1>주문 페이지</h1>
+            </div>
+            <h2 class="order-content-title">주문자 정보 <span class="required"><em>*</em> 필수입력항목</span></h2>
+            <table class="order-content-table">
+                <caption>주문자 정보 입력폼</caption>
+                <colgroup>
+                    <col width="130">
+                    <col width="">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">성명 <em>*</em></th>
+                        <td>
+                            <input type="text" name="" id="" value="" title="주문자 성명" style="width:140px" maxlength="10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">휴대전화 <em>*</em></th>
+                        <td>
+                            <select name="" id="" title="주문자 휴대전화 앞자리" style="width:88px">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>&nbsp;-
+                            <input type="text" name="" id="" value="" title="주문자 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" onkeydown="return onlyNumber(event)" onkeyup="removeChar(event)" maxlength="4">&nbsp;-
+                            <input type="text" name="" id="" value="" title="주문자 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" onkeydown="return onlyNumber(event)" onkeyup="removeChar(event)" maxlength="4">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="order-content-title">배송지 정보 <span class="required"><em>*</em> 필수입력항목</span></h2>
+            <table class="order-content-table">
+                <caption>배송지 정보 입력폼</caption>
+                <colgroup>
+                    <col width="130">
+                    <col width="">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">성명 <em>*</em></th>
+                        <td>
+                            <input type="text" name="" id="" title="수취인 성명" style="width:140px" maxlength="10">
+                            <label>
+                                <input type="checkbox" name="" id="">위 주문자 정보와 동일하게 입력
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">휴대전화 <em>*</em></th>
+                        <td>
+                            <select name="" id="" title="수취인 휴대전화 앞자리" style="width:88px">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>&nbsp;-
+                            <input type="text" name="" id="" title="수취인 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
+                            <input type="text" name="" id="" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">배송지 <em>*</em></th>
+                        <td>
+                            <input type="text" name="" id="" value="" title="배송지 우편번호" style="width:70px" readonly="">
+                            <button type="button" class="btnTypeA">우편번호찾기</button><br>
+                            <input type="text" name="" id="" value="" title="배송지 주소" style="width:400px;margin-top:6px" readonly><br>
+                            <input type="text" name="" id="" value="" title="배송지 상세주소" style="width:400px;margin-top:6px" placeholder="상세주소 입력" class="placeholder">
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <th scope="row">배송 요청사항</th>
+                        <td>
+                            <select name="">
+                                <option value="">배송 메시지를 입력해주세요</option>
+                                <option value="배송 전에 미리 연락 바랍니다.">배송 전에 미리 연락 바랍니다.</option>
+                                <option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
+                                <option value="택배함에 넣어주세요.">택배함에 넣어주세요.</option>
+                                <option value="직접입력">직접입력</option>
+                            </select>
+                            <br>
+                            <input type="text" name="" id="" style="display:none; margin-top:5px;width:400px;">
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            
+            <h2 class="order-content-title">주문상품 확인</h2>
+            <table class="order-list">
+                <caption>주문/결제 상품 목록</caption>
+                <colgroup>
+                    <col width="126">
+                    <col width="350">
+                    <col width="180">
+                    <col width="220">
+                    <col width="150">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="2">상품</th>
+                        <th scope="col">수량</th>
+                        <th scope="col">가격</th>
+                        <th scope="col">배송비</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 장바구니에서 여러개 있을 시 반복 -->
+                    <tr>
+                        <td colspan="2">
+                            <a href="">
+                                2024 설 장수 사과 세트
+                                <p class="order-content">
+                                    <span>흠과</span>
+                                    <span>5kg</span>
+                                </p>
+                            </a>
+                        </td>
+                        <td>1</td>
+                        <td>
+                            <p class="price"><strong>120,000</strong>원</p>
+                        </td>
+                        <td>무료</td>
+                    </tr>
+                    <!-- 반복 종료 -->
+                </tbody>
+            </table>
+    
+            <div class="payment">
+                <div class="total-price">
+                    <span>상품 소계 <em><strong>120,000</strong>원</em></span>
+                    <span class="math">+</span>
+                    <span>총 배송비 <em><strong>0</strong>원</em></span>
+                    <span class="math">=</span>
+                    <span class="total">총 결제 금액 <em class="fontTypeA"><strong>120,000</strong>원</em></span>
+                </div>
+            </div>
+
+            <h2 class="order-content-title">결제수단 선택</h2>
+            <div class="pay-way">
+                <span>경북 봉화군 법전면 엉고개길 88 정재하</span>
+                <br>
+                <span>핸드폰 : 010-4532-4350</span>
+                <br>
+                <p>계좌번호 : 937702-00-710610</p>
+                <p>예금주 : 정현진</p>
+            </div>
+
+            <div class="pay-check-container">
+                <input type="checkbox" class="pay-check">
+                <span>위 계좌번호에 입금 후 주문하기 버튼을 눌러주세요. 입금이 안되었는데 주문만 했을 시 주문을 반려시킬 수 있습니다.</span>
+            </div>
+
+            <div class="btnArea">
+                <a href="" class="btnTypeA sizeXL">장바구니</a>
+                <button class="btnTypeB sizeXL" disabled>주문하기</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
