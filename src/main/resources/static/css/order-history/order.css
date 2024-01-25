@@ -1,0 +1,98 @@
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 1100px;
+}
+
+#order-container{
+    width: 1100px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+}
+
+.pdtHead {
+    overflow: hidden;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 1px solid #b7b7b7;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+.pdtHead .thumbArea {
+    position: relative;
+    float: left;
+    width: 400px;
+}
+
+.pdtHead .thumbArea .thumb {
+    width: 400px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.pdtHead .pdtInfo {
+    position: relative;
+    float: right;
+    width: 640px;
+}
+
+.pdtHead .pdtInfo h1 {
+    margin-right: 100px;
+    padding-left: 20px;
+    font-size: 24px;
+    color: #332f21;
+}
+
+.pdtHead .pdtInfo .summary {
+    margin-top: 8px;
+    padding-left: 20px;
+    color: #828282;
+}
+
+.pdtHead .pdtInfo .price {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #333;
+    font-size: 18px;
+}
+
+.pdtHead .pdtInfo .original {
+    margin-top: 8px;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #999;
+}
+
+.pdtInfo dt {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    min-height: 19px;
+    padding: 16px 0 15px 20px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #332f21;
+}
+
+.pdtInfo dd {
+    min-height: 18px;
+    padding: 16px 20px 15px 120px;
+    border-top: 1px dotted #d9d9d9;
+    font-size: 14px;
+    line-height: 18px;
+}
