@@ -1,0 +1,185 @@
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 1100px;
+}
+
+.original{
+    width: 1100px;
+    height: 50px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+#main-container{
+    width: 1100px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+}
+
+#snb {
+    float: left;
+    width: 190px;
+    padding-bottom: 120px;
+    margin: -60px 0 -120px;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+
+/* ::selection {
+    background: #86786c;
+} */
+
+#snb .tit {
+    position: relative;
+    height: 76px;
+    padding-top: 94px;
+    margin: 0 -1px;
+    text-align: center;
+    font-family: 'nsb';
+    font-size: 18px;
+    line-height: 19px;
+    color: #fff;
+    background-color: #86786c;
+    background-image: url(/image/announcement/person.png);
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+.customerSnb >ul {
+    padding: 13px 20px 14px;
+}
+
+.customerSnb >ul li {
+    padding: 7px 0 6px;
+    font-family: 'nsb';
+    font-size: 14px;
+    line-height: 15px;
+    color: #828282;
+    font-weight: 600;
+}
+
+.customerSnb >ul li a {
+    color: #828282;
+}
+
+.centerInfo {
+    padding: 30px 0 20px 20px;
+    margin-top: 20px;
+    background: #e9e6e2;
+}
+
+.centerInfo .tel {
+    font-family: 'nsb';
+    font-size: 15px;
+    color: #332f21;
+}
+
+.centerInfo .time {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #dad5ce;
+    color: #828282;
+    font-size: 13px;
+}
+
+#contArea {
+    float: right;
+    width: 850px;
+    padding-bottom: 120px;
+    margin-bottom: -120px;
+}
+
+#contArea h1.typeA {
+    height: 38px;
+    margin-bottom: 40px;
+    font-family: 'nsb';
+    font-size: 24px;
+    line-height: 25px;
+    color: #332f21;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.bbsView {
+    border-top: 2px solid #828282;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0 !important;
+    font-size: 13px;
+    font-weight: normal;
+    color: rgb(102, 102, 102);
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-color: gray;
+}
+
+.bbsView .head {
+    position: relative;
+    padding: 16px 130px 14px 33px;
+    border-bottom: 1px solid #828282;
+}
+
+.bbsView .head h2 {
+    font-family: 'nsb';
+    font-size: 15px;
+    line-height: 20px;
+    color: #332f21;
+    word-break: keep-all;
+}
+
+.bbsView .head .date {
+    position: absolute;
+    right: 33px;
+    top: 18px;
+}
+
+.bbsView .content {
+    min-height: 200px;
+    padding: 40px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #939393;
+}
+
+#contArea .btnArea {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.ac {
+    text-align: center !important;
+}
+
+.btnTypeB {
+    display: inline-block;
+    min-width: 90px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff !important;
+    font-size: 13px;
+    font-family: 'nsb';
+    box-sizing: border-box;
+    background: #59621d;
+}
+
+.paging {
+    margin-top: 60px;
+    text-align: center;
+}
