@@ -193,6 +193,10 @@ button {
     background: #fff;
 }
 
+.count-sign {
+    cursor: pointer;
+}
+
 .order-list .price {
     color: #59621d;
     font-size: 12px;

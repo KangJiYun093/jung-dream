@@ -66,6 +66,10 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+input[type=checkbox]:checked {
+    background-position-y: 100%;
+}
+
 a {
     color: #666;
     text-decoration: none;
@@ -318,6 +322,11 @@ select option {
     box-sizing: border-box;
     background: #59621d;
     border: 0;
+}
+
+.btnTypeB:disabled {
+    background: #939393;
+    cursor: default;
 }
 
 .sizeXL {

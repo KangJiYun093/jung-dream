@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form name="" id="" method="" action="">
+        <form name="orderForm" method="post" action="/templates/order/order-complete.html">
             <div class="order-title">
                 <h1>주문 페이지</h1>
             </div>
@@ -23,13 +23,13 @@
                     <tr>
                         <th scope="row">성명 <em>*</em></th>
                         <td>
-                            <input type="text" name="" id="" value="" title="주문자 성명" style="width:140px" maxlength="10">
+                            <input type="text" name="orderName" title="주문자 성명" style="width:140px" maxlength="10">
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">휴대전화 <em>*</em></th>
                         <td>
-                            <select name="" id="" title="주문자 휴대전화 앞자리" style="width:88px">
+                            <select name="orderPhoneStart" id="order-phone-start" title="주문자 휴대전화 앞자리" style="width:88px">
                                 <option value="010">010</option>
                                 <option value="011">011</option>
                                 <option value="016">016</option>
@@ -37,8 +37,8 @@
                                 <option value="018">018</option>
                                 <option value="019">019</option>
                             </select>&nbsp;-
-                            <input type="text" name="" id="" value="" title="주문자 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" onkeydown="return onlyNumber(event)" onkeyup="removeChar(event)" maxlength="4">&nbsp;-
-                            <input type="text" name="" id="" value="" title="주문자 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" onkeydown="return onlyNumber(event)" onkeyup="removeChar(event)" maxlength="4">
+                            <input type="text" name="orderPhoneMiddle" title="주문자 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
+                            <input type="text" name="orderPhoneEnd" title="주문자 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
                         </td>
                     </tr>
                 </tbody>
@@ -55,16 +55,16 @@
                     <tr>
                         <th scope="row">성명 <em>*</em></th>
                         <td>
-                            <input type="text" name="" id="" title="수취인 성명" style="width:140px" maxlength="10">
+                            <input type="text" name="receiveName" title="수취인 성명" style="width:140px" maxlength="10">
                             <label>
-                                <input type="checkbox" name="" id="">위 주문자 정보와 동일하게 입력
+                                <input type="checkbox" name="enterSame">위 주문자 정보와 동일하게 입력
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">휴대전화 <em>*</em></th>
                         <td>
-                            <select name="" id="" title="수취인 휴대전화 앞자리" style="width:88px">
+                            <select name="receivePhoneStart" id="receive-phone-start" title="수취인 휴대전화 앞자리" style="width:88px">
                                 <option value="010">010</option>
                                 <option value="011">011</option>
                                 <option value="016">016</option>
@@ -72,17 +72,17 @@
                                 <option value="018">018</option>
                                 <option value="019">019</option>
                             </select>&nbsp;-
-                            <input type="text" name="" id="" title="수취인 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
-                            <input type="text" name="" id="" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
+                            <input type="text" name="receivePhoneMiddle" title="수취인 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
+                            <input type="text" name="receivePhoneEnd" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">배송지 <em>*</em></th>
                         <td>
-                            <input type="text" name="" id="" value="" title="배송지 우편번호" style="width:70px" readonly="">
-                            <button type="button" class="btnTypeA">우편번호찾기</button><br>
-                            <input type="text" name="" id="" value="" title="배송지 주소" style="width:400px;margin-top:6px" readonly><br>
-                            <input type="text" name="" id="" value="" title="배송지 상세주소" style="width:400px;margin-top:6px" placeholder="상세주소 입력" class="placeholder">
+                            <input type="text" id="postcode" title="배송지 우편번호" placeholder="우편번호" style="width:70px" readonly>
+                            <button type="button" class="btnTypeA" id="find-address">우편번호찾기</button><br>
+                            <input type="text" id="roadAddress" title="배송지 주소" placeholder="배송지 주소" style="width:400px;margin-top:6px" readonly><br>
+                            <input type="text" title="배송지 상세주소" style="width:400px;margin-top:6px" placeholder="상세주소 입력" class="detail-address">
                         </td>
                     </tr>
                     <!-- <tr>
@@ -169,9 +169,12 @@
 
             <div class="btnArea">
                 <a href="" class="btnTypeA sizeXL">장바구니</a>
-                <button class="btnTypeB sizeXL" disabled>주문하기</button>
+                <button type="button" class="btnTypeB sizeXL" id="order-btn" disabled>주문하기</button>
             </div>
         </form>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="../../static/js/order/order.js"></script>
 </html>
