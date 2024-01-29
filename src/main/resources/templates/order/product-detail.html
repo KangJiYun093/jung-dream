@@ -53,11 +53,11 @@
 
 						<dt>수량선택</dt>
 						<dd class="count">
-							<span class="count-sign">
+							<span class="count-sign" id="minus">
 								<img src="https://www.sanghafarm.co.kr/images/btn/btn_minus.png" alt="-">
 							</span>
-							<input type="text" name="" id="" value="1" readonly>
-							<span class="count-sign">
+							<input type="text" name="number" value="1" readonly>
+							<span class="count-sign" id="plus">
 								<img src="https://www.sanghafarm.co.kr/images/btn/btn_plus.png" alt="+">
 							</span>
 						</dd>
@@ -99,7 +99,7 @@
 
 						<dt class="total">총 상품 금액</dt>
 						<dd class="total">
-							<strong><span id="total_price">26,000</span></strong>원
+							<strong><span id="total_price"></span></strong>원
 						</dd>
 					</dl>
 
@@ -112,4 +112,6 @@
 		</div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="../../static/js/order/product-detail.js"></script>
 </html>
