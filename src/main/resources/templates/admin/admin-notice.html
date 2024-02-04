@@ -15,9 +15,35 @@
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
-            <button id="cancel-btn">취소</button>
+            <button class="cancel-btn">취소</button>
             <button id="confirm-btn">확인</button>
         </div>
+        </div>
+    </div>
+    <!-- 글쓰기 모달창 -->
+    <div id="write-modal" class="write-modal">
+        <div class="write-content">
+        <!-- <p>공지사항을 작성해주세요</p> -->
+        <div class="modal-buttons">
+            <form method="post">
+            <div class="form-group">
+				<label>제목</label> 
+                <input class="form-control" name="title">
+			</div>
+            <div class="form-group">
+				<label>내용</label>
+					<textarea class="form-control" rows="10" name="content"></textarea>
+			</div>
+            <div class="form-group">
+				<label>이미지 업로드</label>
+                    <input type="file" class="image-upload" accept="image/*" required multiple>
+			</div>
+            <div class="writes">
+            <button class="cancel-btn">취소</button>
+            <input class="notice-submit" type="submit" value="등록">
+            </div>
+        </div>
+            </form>
         </div>
     </div>
     <!-- 모달 -->
@@ -72,9 +98,11 @@
             <div class="inner-wrapper">
                 <div class="title-wrapper">
                     <div class="page-title">공지사항</div>
-                    <div class="write-button">글쓰기</div>
-                    <div class="delete-button">삭제하기</div>
-                </div>
+                    <div class="button-class">
+                        <div class="write-button">글쓰기</div>
+                        <div class="delete-button">삭제하기</div>
+                        </div>
+                    </div>
 
 
                 <table id="inquiryTable">
@@ -121,7 +149,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 </script>
-<script src="/js/admin/admin.js"></script>
-<script src="/js/admin/inquiry-list-search.js"></script>
-<script src="/js/admin/checkbox.js"></script>
+<script src="../../static/admin/admin.js"></script>
+<!-- <script src="../../static/admin/inquiry-list-search.js"></script> -->
+<script src="../../static/admin/checkbox.js"></script>
 </html>

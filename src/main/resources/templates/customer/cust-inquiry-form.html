@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1문의 페이지</title>
+    <link rel="stylesheet" href="../../static/css/customer/cust-inquiry-form.css">
+</head>
+<body>
+    <div id="wrapper">
+        <p class="original"></p>
+        <div id="main-container">
+            <div id="snb" class="customerSnb" style="min-height: 857px;">
+               <!-- <img src="../../static/image/announcement/person.png" style="background: #86786c;" width="200"> -->
+                <p class="tit">
+                    고객센터
+                </p>
+                <ul>
+                    <li>
+                        <!-- <a href="">공지사항</a> -->
+                        공지사항
+                    </li>
+                    <li>
+                        <!-- <a href="">1:1문의</a> -->
+                        1:1문의
+                    </li>
+                    <li>
+                        <!-- <a href="">1:1문의</a> -->
+                        1:1문의내역
+                    </li>
+                </ul>
+                <div class="centerInfo">
+                    <p class="tel">
+                        보류
+                        <br>
+                        <span>010-1234-5678</span>
+                    </p>
+                    <p class="time">오전 09:00 ~ 오후 18:00</p>
+                </div>
+            </div>
+            <div id="contArea">
+                <h1 class="typeA">1:1 문의</h1>
+                <!-- 내용영역 -->
+                <p class="caution">문의하신 내용에 대한 답변은 1:1문의 내역에서 확인하실 수 있습니다.</p>
+                <form>
+                    <table class="bbsForm typeB">
+                        <caption>1:1 상담 입력폼</caption>
+                        <colgroup>
+                            <col width="130">
+                            <col width="">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <label for="title">* 제목</label>
+                                </th>
+                                <td>
+                                    <input type="text" name="title" id="title" style="width:660px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="cont">내용</label>
+                                </th>
+                                <td>
+                                    <textarea id="question" name="question" style="width:660px;height:250px">
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="imageName">첨부파일</label>
+                                </th>
+                                <td>
+                                    <p class="fileBox">
+                                        <input type="text" id="fileText" readonly="readonly" style="width:590px">
+                                        <span class="file btnTypeB">파일첨부
+                                            <!-- <input type="file" id="image" name="image" onchange="$('#fileText').val($('#image').val())"> -->
+                                        </span>
+                                    </p>
+                                    <p class="fileBox">
+                                        <input type="text" id="fileText2" readonly="readonly" style="width:590px">
+                                        <span class="file btnTypeB">파일첨부
+                                            <!-- <input type="file" id="image2" name="image2" onchange="$('#fileText2').val($('#image2').val())"> -->
+                                        </span>
+                                    </p>
+                                    <p class="fileBox">
+                                        <input type="text" id="fileText3" readonly="readonly" style="width:590px">
+                                        <span class="file btnTypeB">파일첨부
+                                            <!-- <input type="file" id="image3" name="image3" onchange="$('#fileText3').val($('#image3').val())"> -->
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btnArea ac">
+                        <a href="" class="btnTypeB">등록</a>
+                    </div>
+                </form>
+                <ul class="paging"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

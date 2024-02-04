@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="../../static/css/cart/cart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="orderTit">
+            <h1>장바구니</h1>
+        </div>
+        <div class="bbsHead">
+            <p class="fl">장바구니 : <strong><span>0</span>개</strong></p>
+        </div>
+        <table class="order-list">
+            <caption>주문/결제 상품 목록</caption>
+            <colgroup>
+                <col width="50">
+                <col width="126">
+                <col width="">
+                <col width="180">
+                <col width="220">
+                <col width="150">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <input type="checkbox" title="전체선택" class="all-check" checked="true">
+                    </th>
+                    <th scope="col" colspan="2">상품</th>
+                    <th scope="col">수량</th>
+                    <th scope="col">가격</th>
+                    <th scope="col">배송비</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 상품이 없으면 나올 문구, 또한 나머지 아래 요소들은 다 숨겨야함  -->
+                <!-- <td colspan="6">장바구니에 담긴 상품이 없습니다.</td> -->
+                <!-- 장바구니에서 여러개 있을 시 반복 -->
+                <tr class="content-loop">
+                    <td>
+                        <input type="checkbox" class="check" name="check" checked>
+                    </td>
+                    <td colspan="2">
+                        <div class="product-img-container">
+                            <img src="../../static/image/KakaoTalk_20240122_174452638.jpg" alt="">
+                        </div>
+                        <div>
+                            <a href="">
+                                2024 설 장수 사과 세트
+                                <p class="order-content">
+                                    <span>흠과</span>
+                                    <span>5kg</span>
+                                </p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="count-number">
+                            <span class="count-sign minus">
+                                <img src="https://www.sanghafarm.co.kr/images/btn/btn_minus.png" alt="-">
+                            </span>
+                            <input type="text" name="number" value="1" readonly>
+                            <span class="count-sign plus">
+                                <img src="https://www.sanghafarm.co.kr/images/btn/btn_plus.png" alt="+">
+                            </span>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="price"><strong class="price-text">120,000</strong>원</p>
+                        <input type="hidden" name="onePrice" value="120000">
+                    </td>
+                    <td>무료</td>
+                </tr>
+                <tr class="content-loop">
+                    <td>
+                        <input type="checkbox" class="check" name="check" checked>
+                    </td>
+                    <td colspan="2">
+                        <div class="product-img-container">
+                            <img src="../../static/image/KakaoTalk_20240122_174452638.jpg" alt="">
+                        </div>
+                        <div>
+                            <a href="">
+                                2024 설 장수 사과 세트
+                                <p class="order-content">
+                                    <span>흠과</span>
+                                    <span>5kg</span>
+                                </p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="count-number">
+                            <span class="count-sign minus">
+                                <img src="https://www.sanghafarm.co.kr/images/btn/btn_minus.png" alt="-">
+                            </span>
+                            <input type="text" name="number" value="1" readonly>
+                            <span class="count-sign plus">
+                                <img src="https://www.sanghafarm.co.kr/images/btn/btn_plus.png" alt="+">
+                            </span>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="price"><strong class="price-text">120,000</strong>원</p>
+                        <input type="hidden" name="onePrice" value="120000">
+                    </td>
+                    <td>무료</td>
+                </tr>
+                <!-- 반복 종료 -->
+            </tbody>
+        </table>
+        <div class="cart-delete">
+			선택한 상품을
+			<button class="delete-btn">삭제</a>
+		</div>
+
+        <div class="payment">
+            <div class="total-price">
+                <span>상품 소계 <em><strong class="product-total-price">120,000</strong>원</em></span>
+                <span class="math">+</span>
+                <span>총 배송비 <em><strong>0</strong>원</em></span>
+                <span class="math">=</span>
+                <span class="total">총 결제 금액 <em class="fontTypeA"><strong class="real-total-price">120,000</strong>원</em></span>
+            </div>
+        </div>
+
+        <div class="btnArea">
+            <button class="btnTypeA sizeXL">선택주문</button>
+            <button class="btnTypeB sizeXL" disabled>전체주문</button>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="../../static/js/cart/cart.js"></script>
+</html>
