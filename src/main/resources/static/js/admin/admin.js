@@ -61,3 +61,22 @@ $(document).ready(function() {
     })
 })
 
+/* 상세 항목 모달 */
+$(document).ready(function() {
+    $('tr').click(function(){
+        console.log("상세 항목 클릭");
+        $('#detail-modal').show();
+        console.log("모달 열기");
+    })
+})
+
+
+$(document).ready(function() {
+    $('li').click(function(){
+        console.log("상세 항목 클릭");
+        $('#detail-modal').show();
+        console.log("모달 열기");
+    })
+})
+
+

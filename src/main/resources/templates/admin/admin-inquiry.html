@@ -9,16 +9,88 @@
     <link rel="stylesheet" href="../../static/css/admin/admin.css">
 </head>
 <body>
-    <!-- 모달 -->
+  <!-- 모달 -->
     <!-- 삭제 모달창 -->
     <div id="delete-modal" class="delete-modal">
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
-            <button id="cancel-btn">취소</button>
+            <button class="cancel-btn">취소</button>
             <button id="confirm-btn">확인</button>
         </div>
         </div>
+    </div>
+    <!-- 글쓰기 모달창 -->
+    <div id="write-modal" class="write-modal">
+        <div class="write-content">
+        <!-- <p>공지사항을 작성해주세요</p> -->
+        <div class="modal-buttons">
+            <form method="post">
+            <div class="form-group">
+				<label>제목</label> 
+                <input class="form-control" name="title">
+			</div>
+            <div class="form-group">
+				<label>내용</label>
+					<textarea class="form-control" rows="10" name="content"></textarea>
+			</div>
+            <div class="form-group">
+				<label>이미지 업로드</label>
+                    <input type="file" class="image-upload" accept="image/*" required multiple>
+			</div>
+            <div class="writes">
+            <button class="cancel-btn">취소</button>
+            <input class="notice-submit" type="submit" value="등록">
+            </div>
+        </div>
+            </form>
+        </div>
+    </div>
+    <!-- 글쓰기 모달창 -->
+    <!-- 상세 페이지 모달창 -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-content">
+        <p>문의 내역</p>
+        <div class="detail-wrapper">
+            <div class="form-group">
+				<label>이름</label> 
+                <input class="form-control" name="inquiry-name" readonly>
+			</div>
+            <div class="form-group">
+				<label>휴대폰번호</label> 
+                <input class="form-control" name="inquiry-number" readonly>
+			</div>
+            <div class="form-group">
+				<label>문의 제목</label> 
+                <input class="form-control" name="inquiry-title" readonly>
+			</div>
+            <div class="form-group">
+				<label>문의 내용</label>
+					<textarea class="form-control" rows="10" name="inquiry-content" readonly></textarea>
+			</div>
+            <div class="form-group">
+                <div class="detail-images">
+				<label>첨부 파일</label>
+                <div></div>
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+            </div>
+			</div>
+            <div class="form-group">
+				<label>답변하기</label>
+					<textarea class="form-control" rows="10" name="inquiry-answer-content"></textarea>
+			</div>
+            <div class="modal-buttons">
+                <button class="cancel-btn">취소</button>
+                <button id="confirm-btn">확인</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- 상세 페이지 모달 -->
     </div>
     <!-- 모달 -->
     <!-- 헤더 -->
@@ -51,6 +123,9 @@
                         </li>
                         <li class="menu">
                             <a class="menus" href="/admin/admin-inquiry">문의 관리</a>
+                        </li>
+                        <li class="menu">
+                            <a class="menus" href="/admin/admin-inquiry">품종 관리</a>
                         </li>
                     </ul>
                 </div>
@@ -91,15 +166,60 @@
                             <!-- <input type="checkbox" id="select-all" class="substituted"> -->
                         </th>
                         <th class="number">번호</th>
-                        <th class="views">작성자</th>
-                        <th class="like-count">문의 내용</th>
-                        <th class="writer inquiry-email">이메일 주소</th>
+                        <th class="name">작성자</th>
                         <th class="title">휴대폰 번호</th>
-                        <th class="register-time">답변 여부</th>
-                        <!-- <th class="detail-top">상세보기</th> -->
+                        <th class="inquiry-content">문의 내용</th>
+                       <!--  <th class="writer inquiry-email">이메일 주소</th> -->
+                        <th class="answer">답변 여부</th>
+                        <th class="date">등록일</th>
                     </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>문의사항 입니다</td>
+                            <td>답변완료</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>문의사항 입니다</td>
+                            <td>답변완료</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>문의사항 입니다</td>
+                            <td>답변완료</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>문의사항 입니다</td>
+                            <td>답변완료</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>문의사항 입니다</td>
+                            <td>답변완료</td>
+                            <td>2024-02-03</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -119,8 +239,11 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+
+
+
 </script>
-<script src="/js/admin/admin.js"></script>
+<script src="../../static/js/admin/admin.js"></script>
 <script src="/js/admin/inquiry-list-search.js"></script>
-<script src="/js/admin/checkbox.js"></script>
+<script src="../../static/js/admin/checkbox.js"></script>
 </html>
