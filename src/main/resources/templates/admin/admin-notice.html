@@ -45,8 +45,46 @@
         </div>
             </form>
         </div>
+    <!-- 공지 상세 페이지 모달 -->
+    <!-- 상세 페이지 모달 -->
+</div>
+<div id="detail-modal" class="detail-modal">
+    <div class="detail-content">
+    <p>공지사항</p>
+    <div class="detail-wrapper">
+        <div class="form-group">
+            <label>제목</label> 
+            <input class="form-control" name="notice-title" readonly>
+        </div>
+        <div class="form-group">
+            <label>작성일</label> 
+            <input class="form-control" name="notice-date" readonly>
+        </div>
+        <div class="form-group">
+            <label>내용</label>
+                <textarea class="form-control" rows="10" name="inquiry-content" readonly></textarea>
+        </div>
+        <div class="form-group">
+            <div class="detail-images">
+            <label>첨부 파일</label>
+            <div></div>
+            <img src="../../static/image/admin/search.png">
+            <img src="../../static/image/admin/search.png">
+            <img src="../../static/image/admin/search.png">
+            <img src="../../static/image/admin/search.png">
+            <img src="../../static/image/admin/search.png">
+        </div>
+        </div>
+        <div class="modal-buttons">
+            <button class="cancel-btn">취소</button>
+            <button id="confirm-btn">확인</button>
+        </div>
+        </div>
     </div>
+    </div>
+    
     <!-- 모달 -->
+
     <!-- 헤더 -->
     <header>
         <div class="logo-wrapper">
@@ -76,7 +114,7 @@
                             <a class="menus" href="/admin/admin-notice">공지 관리</a>
                         </li>
                         <li class="menu">
-                            <a class="menus" href="/admin/admin-inquiry">문의 관리</a>
+                            <a class="menus" href="/admin/admin-inquiry">품종 관리</a>
                         </li>
                     </ul>
                 </div>
@@ -104,33 +142,73 @@
                         </div>
                     </div>
 
-
-                <table id="inquiryTable">
-                    <thead>
-                    <tr>
-                        <th>
-                            <!-- 체크박스 -->
-                            <div class="checkbox-wrapper-21">
-                                <label class="control control--checkbox">
-                                    <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
-                                    <div class="control__indicator"></div>
-                                </label>
-                            </div>
-                            <!-- 체크박스 -->
-                            <!-- <input type="checkbox" id="select-all" class="substituted"> -->
-                        </th>
-                        <th class="number">번호</th>
-                        <th class="views">문의 유형</th>
-                        <th class="like-count">문의 내용</th>
-                        <th class="writer inquiry-email">이메일 주소</th>
-                        <th class="title">휴대폰 번호</th>
-                        <th class="register-time">답변 여부</th>
-                        <!-- <th class="detail-top">상세보기</th> -->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                    <!-- 본문 -->
+                    <table id="notice-table">
+                        <thead>
+                        <tr>
+                            <th>
+                                <!-- 체크박스 -->
+                                <div class="checkbox-wrapper-21">
+                                    <label class="control control--checkbox">
+                                        <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                                <!-- 체크박스 -->
+                                <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                            </th>
+                            <th class="number">번호</th>
+                            <th class="notice-title">제목</th>
+                           <!--  <th class="writer inquiry-email">이메일 주소</th> -->
+                            <th class="notice-content">글 내용</th>
+                            <th class="date">등록일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데 어떻게 생각..</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>위에 내용처럼 일정 부분만 표시되게 하는 게 좋지 않을까요</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>공지사항 예시입니다 내용입니다 컨텐츠입니다</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>공지사항입니다</td>
+                                <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
+                                <td>2024-02-03</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 <div class="pages-wrapper">
                     <div class="arrow-left"></div>
@@ -147,9 +225,7 @@
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-</script>
-<script src="../../static/admin/admin.js"></script>
+<script src="../../static/js/admin/admin.js"></script>
 <!-- <script src="../../static/admin/inquiry-list-search.js"></script> -->
 <script src="../../static/admin/checkbox.js"></script>
 </html>

@@ -20,6 +20,108 @@
         </div>
     </div>
     <!-- 모달 -->
+       <!-- 글쓰기 모달창 -->
+    <div id="write-modal" class="write-modal">
+        <div class="write-content">
+        <!-- <p>공지사항을 작성해주세요</p> -->
+        <div class="modal-buttons">
+            <form method="post">
+                <div class="form-group kind-select">
+                    <label>품종</label> 
+                    <select>
+                        <option value="apple">사과</option>
+                        <option value="apple-juice">사과즙</option>
+                    </select>
+                </div>
+                <div class="option-kind">
+                    <div class="form-group">
+                        <label>규격</label> 
+                        <input class="form-control" name="form">
+                    </div>
+                    <div class="form-group">
+                        <label>개수</label> 
+                        <input class="form-control" name="count">
+                    </div>
+                    <div class="form-group">
+                        <label>키로수</label> 
+                        <input class="form-control" name="weigh">
+                    </div>
+                    <div class="form-group">
+                        <label>가격</label> 
+                        <input class="form-control" name="price">
+                    </div>
+                    </div>
+            <div class="form-group">
+				<label>판매 단위</label> 
+                <input class="form-control" name="sales-unit">
+			</div>
+   <!--          <div class="form-group">
+				<label>포장 타입</label> 
+                <input type="text" value="박스 포장" class="form-control" name="package" readonly="">
+			</div> -->
+<!--             <div class="form-group">
+				<label>원산지</label> 
+                <input type="text" value="경상북도 봉화군" class="form-control" name="local" readonly="">
+			</div> -->
+            <div class="form-group">
+				<label>규격</label> 
+                <select name="option">
+                        <option value="americano">1과</option>
+                        <option value="caffe latte">2과</option>
+                        <option value="espresso">3과</option>
+                        <option value="espresso">4과</option>
+			</div>
+            <div class="form-group">
+				<label>이미지 업로드</label>
+                    <input type="file" class="image-upload" accept="image/*" multiple>
+			</div>
+            <div class="writes">
+            <button class="cancel-btn">취소</button>
+            <input class="notice-submit" type="submit" value="등록">
+            </div>
+        </div>
+            </form>
+        </div>
+    </div>
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-content">
+        <p>상품 상세 페이지</p>
+        <div class="detail-wrapper">
+            <div class="form-group">
+                <label>판매단위</label> 
+                <input class="form-control" name="saels-unit-detail" readonly>
+            </div>
+            <div class="form-group">
+                <label>중량/용량</label> 
+                <input class="form-control" name="weigh-detail" readonly>
+            </div>
+            <div class="form-group">
+				<label>판매자</label> 
+                <input class="form-control" name="seller-detail" readonly>
+			</div>
+            <div class="form-group">
+				<label>규격</label> 
+                <input class="form-control" name="option-detail" readonly>
+			</div>
+            <div class="form-group">
+                <div class="detail-images">
+                <label>첨부 파일</label>
+                <div></div>
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+                <img src="../../static/image/admin/search.png">
+            </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel-btn">취소</button>
+                <button id="confirm-btn">확인</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    <!-- 모달 -->
     <header>
         <div class="logo-wrapper">
             <div class="logo">사과 프로젝트</div>
@@ -49,6 +151,9 @@
                     </li>
                     <li class="menu">
                         <a class="menus" href="/admins/purchase-board/list">문의 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admins/purchase-board/list">품종 관리</a>
                     </li>
                 </ul>
             </div>
@@ -80,94 +185,76 @@
             <!-- 상품 목록 창 -->        
                 <ul class="goods-list">
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                     <li class="goods">
-                        <a href="http://naver.com">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
-                        </a>
                     </li>
                 </ul>
 
@@ -185,5 +272,6 @@
         <!-- contents -->
     </main>
 </body>
-</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../static/js/admin/admin.js"></script>
 </html>

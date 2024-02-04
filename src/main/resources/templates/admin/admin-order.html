@@ -22,6 +22,52 @@
         </div>
         </div>
     </div>
+    <!-- 삭제 모달창 -->
+    <!-- 상세 페이지 모달 -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-content modal-background">
+        <p>주문 내역</p>
+        <div class="detail-wrapper">
+            <div class="form-group">
+				<label>주문자 이름</label> 
+                <input class="form-control" name="order-name-detail" readonly>
+			</div>
+            <div class="form-group">
+				<label>주문자 휴대폰 번호</label> 
+                <input class="form-control" name="order-number-detail" readonly>
+			</div>
+            <div class="form-group">
+				<label>받는 이 이름</label> 
+                <input class="form-control" name="order-name-detail" readonly>
+			</div>
+            <div class="form-group">
+				<label>받는 이 휴대폰 번호</label> 
+                <input class="form-control" name="order-number-detail" readonly>
+			</div>
+            <div class="form-group">
+				<label>주소</label> 
+                <input class="form-control" name="order-address-detail" readonly>
+			</div>
+            
+            <div class="form-group">
+				<label>상품명</label> 
+                <input class="form-control" name="goods-title" readonly>
+			</div>
+            <div class="form-group">
+				<label>수량</label>
+                <input class="form-control" name="goods-title" readonly>
+			</div>
+            <div class="form-group">
+				<label>가격</label> 
+                <input class="form-control" name="goods-title" readonly>
+			</div>
+            <div class="modal-buttons">
+                <button id="confirm-btn">확인</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- 상세 페이지 모달 -->
     <!-- 모달 -->
     <!-- 헤더 -->
     <header>
@@ -53,6 +99,9 @@
                     </li>
                     <li class="menu">
                         <a class="menus" href="/admin/admin-inquiry">문의 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admin/admin-inquiry">품종 관리</a>
                     </li>
                 </ul>
             </div>
@@ -86,32 +135,80 @@
                     <div class="page-title">주문 목록</div>
                     <div class="delete-button">삭제하기</div>
                 </div>
-                <table id="purchaseboard-table">
+
+
+                <table id="inquiryTable">
                     <thead>
                     <tr>
                         <th>
-                           <!-- 체크박스 -->
+                            <!-- 체크박스 -->
                             <div class="checkbox-wrapper-21">
-                                <label class="control control&#45;&#45;checkbox">
+                                <label class="control control--checkbox">
                                     <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
                                     <div class="control__indicator"></div>
                                 </label>
                             </div>
-                         <!--   체크박스 -->
-                         <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                            <!-- 체크박스 -->
+                            <!-- <input type="checkbox" id="select-all" class="substituted"> -->
                         </th>
                         <th class="number">번호</th>
-                        <th class="title">상품 이름</th>
-                        <th class="writer">판매자</th>
-                        <th class="views">휴대폰</th>
-                        <th class="like-count">주소</th>
-                        <th class="register-time">작성시간</th>
-                   <!--      <th class="detail-top">상세보기</th>  -->
+                        <th class="name">주문자 이름</th>
+                        <th class="title">휴대폰 번호</th>
+                        <th class="inquiry-content">제품명</th>
+                       <!--  <th class="writer inquiry-email">이메일 주소</th> -->
+                        <th class="answer">가격</th>
+                        <th class="date">주문 일자</th>
                     </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>상품명 입니다</td>
+                            <td>45,000</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>상품명 입니다</td>
+                            <td>45,000</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>상품명 입니다</td>
+                            <td>45,000</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>상품명 입니다</td>
+                            <td>45,000</td>
+                            <td>2024-02-03</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>정현진</td>
+                            <td>010-1111-1111</td>
+                            <td>상품명 입니다</td>
+                            <td>45,000</td>
+                            <td>2024-02-03</td>
+                        </tr>
                     </tbody>
                 </table>
+
                 <div class="pages-wrapper">
                     <div class="arrow-left"></div>
                     <div class="page active">1</div>
@@ -128,7 +225,7 @@
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/admin/admin.js"></script>
+<script src="../../static/js/admin/admin.js"></script>
 <script src="/js/admin/user.js"></script>
 <script src="/js/admin/checkbox.js"></script>
 <script src="/js/admin/purchaseboard-search.js"></script>

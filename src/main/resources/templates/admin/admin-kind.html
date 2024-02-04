@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>품종 등록 페이지</title>
+    <link rel="stylesheet" href="../../static/css/admin/admin.css">
+    <link rel="stylesheet" href="../../static/css/admin/admin-goods.css">
+</head>
+<body>
+     <!-- 모달 -->
+    <!-- 삭제 모달창 -->
+    <div id="delete-modal" class="delete-modal">
+        <div class="modal-content">
+        <p>정말로 삭제하시겠습니까?</p>
+        <div class="modal-buttons">
+            <button id="cancel-btn">취소</button>
+            <button id="confirm-btn">확인</button>
+        </div>
+        </div>
+    </div>
+    <!-- 모달 -->
+       <!-- 글쓰기 모달창 -->
+    <div id="write-modal" class="write-modal">
+        <div class="write-content">
+        <!-- <p>공지사항을 작성해주세요</p> -->
+        <div class="modal-buttons">
+            <form method="post">
+            <div class="form-group kind-select">
+				<label>품종</label> 
+                <select>
+                    <option value="apple">사과</option>
+                    <option value="apple-juice">사과즙</option>
+                </select>
+			</div>
+            <div class="form-group">
+				<label>판매자</label> 
+                <input class="form-control" name="name">
+			</div>
+            <div class="form-group">
+				<label>제목</label> 
+                <input class="form-control" name="title">
+			</div>
+            <div class="option-kind">
+            <div class="form-group">
+				<label>규격</label> 
+                <input class="form-control" name="form">
+			</div>
+            <div class="form-group">
+                <label>개수</label> 
+                <input class="form-control" name="count">
+            </div>
+            <div class="form-group">
+                <label>키로수</label> 
+                <input class="form-control" name="weigh">
+            </div>
+            <div class="form-group">
+                <label>가격</label> 
+                <input class="form-control" name="price">
+            </div>
+        </div>
+            <div class="writes">
+            <button class="cancel-btn">취소</button>
+            <input class="notice-submit" type="submit" value="등록">
+            </div>
+        </div>
+            </form>
+        </div>
+    </div>
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-content modal-background">
+        <p>상품 상세 페이지</p>
+        <div class="detail-wrapper">
+            <div class="form-group">
+                <label>품종</label> 
+                <input class="form-control" name="kind-detail" readonly>
+            </div>
+            <div class="form-group">
+                <label>판매자</label> 
+                <input class="form-control" name="seller-detail" readonly>
+            </div>
+            <div class="form-group">
+                <label>제목</label> 
+                <input class="form-control" name="title-detail" readonly>
+            </div>
+            <div class="option-kind">
+            <div class="form-group sub-object">
+                <label>규격</label> 
+                <input class="form-control" name="form-detail" readonly>
+            </div>
+            <div class="form-group sub-object">
+				<label>개수</label> 
+                <input class="form-control" name="count-detail" readonly>
+			</div>
+            <div class="form-group sub-object">
+				<label>키로수</label> 
+                <input class="form-control" name="weigh-detail" readonly>
+			</div>
+            <div class="form-group sub-object">
+				<label>가격</label> 
+                <input class="form-control" name="price-detail" readonly>
+			</div>
+        </div>
+            <div class="modal-buttons">
+                <button class="cancel-btn">취소</button>
+                <button id="confirm-btn">확인</button>
+        </div>
+            </div>
+        </div>
+        </div>
+    <!-- 모달 -->
+    <header>
+        <div class="logo-wrapper">
+            <div class="logo">사과 프로젝트</div>
+        </div>
+        <div class="time-wrapper">
+            <div class="time-left">현재 시간 : </div>
+            <!-- 현재 시간 js로 들어감 -->
+            <div class="time"></div>
+        </div>
+    </header>
+    <main>
+        <!-- 사이드 바 메뉴 -->
+        <nav>
+            <div class="menu-bar">
+                <ul>
+                   <!-- <li class="menu">
+                        <a class="menus" href="/admins/home">홈</a>
+                    </li>-->
+                    <li class="menu">
+                        <a class="menus" href="/admins/member/list">상품 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admins/event-board/list">주문 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admins/recruitment-board/list">공지 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admins/purchase-board/list">문의 관리</a>
+                    </li>
+                    <li class="menu">
+                        <a class="menus" href="/admins/purchase-board/list">품종 관리</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 사이드 바 메뉴 -->
+        <!-- contents -->
+        <content>
+            <!-- 검색 창 -->
+            <article class="module--search">
+                <div class="search__searchbox">
+                    <form action="" class="search__searchbox__form">
+                        <input id="searchbox" type="text" placeholder="원하시는 키워드로 검색해보세요" maxlength="40"/>
+                        <button type="button" class="search__searchbox__button">
+                            <img src="../../static/image/admin/search.png"/>
+                        </button>
+                    </form>
+                </div>
+            </article>
+            <!-- 검색 창 -->
+            <div class="inner-wrapper">
+                <div class="title-wrapper">
+                    <div class="page-title">품종 목록</div>
+                    <div class="button-class">
+                        <div class="write-button">등록하기</div>
+                        <div class="delete-button">삭제하기</div>
+                        </div>
+                    </div>
+
+           <!-- 본문 -->
+           <table id="kind-table">
+            <thead>
+            <tr>
+                <th>
+                    <!-- 체크박스 -->
+                    <div class="checkbox-wrapper-21">
+                        <label class="control control--checkbox">
+                            <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <!-- 체크박스 -->
+                    <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                </th>
+                <th class="number">번호</th>
+                <th class="kind-table">품종</th>
+                <th class="kind-seller">판매자</th>
+                <th class="kind-title">제목</th>
+                <th class="date">등록일</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>사과</td>
+                    <td>강지윤</td>
+                    <td>당도 높은 사과 1box</td>
+                    <td>2024-02-03</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+                <div class="pages-wrapper">
+                    <div class="arrow-left"></div>
+                    <div class="page active">1</div>
+                    <div class="page">2</div>
+                    <div class="page">3</div>
+                    <div class="page">4</div>
+                    <div class="page">5</div>
+                    <div class="arrow-right"></div>
+                </div>
+            </div>
+        </content>
+        <!-- contents -->
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../static/js/admin/admin.js"></script>
+</html>
