@@ -1,0 +1,136 @@
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* #wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 1100px;
+} */
+
+#container {
+    width: 1100px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+}
+
+.history-title {
+    margin-bottom: 60px;
+    border-bottom: 3px solid #e5e5e5;
+}
+
+.history-title h1 {
+    height: 50px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 33px;
+    color: #332f21;
+}
+
+.caution > li {
+    position: relative;
+    padding-left: 8px;
+    line-height: 22px;
+    word-break: keep-all;
+    color: #666;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    font-size: 13px;
+}
+
+.history-list {
+    width: 100%;
+    border-top: 2px solid #828282;
+    border-bottom: 1px solid #d9d9d9;
+    table-layout: fixed;
+    border-top-color: #828282;
+    border-bottom: 2px solid #828282;
+}
+
+caption {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0 !important;
+    text-indent: initial;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.history-list thead th {
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    border-bottom: 1px solid #828282;
+    text-align: center;
+    color: #332f21;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.history-list tbody tr:first-child td {
+    border-top: 0;
+}
+
+.history-list tbody td:first-child {
+    border-left-width: 0;
+}
+
+.history-list tbody td {
+    padding: 20px 0;
+}
+
+.history-list tbody td {
+    padding: 16px 0 15px;
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    line-height: 18px;
+    text-align: center;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.history-content {
+    position: relative;
+    padding-left: 13px;
+    margin-top: 3px;
+    font-family: 'ns';
+    font-size: 12px;
+    color: #939393;
+}
