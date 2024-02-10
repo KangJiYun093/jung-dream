@@ -39,7 +39,7 @@ body {
     background: #86786c;
 } */
 
-#snb .tit {
+#snb .tit  {
     position: relative;
     height: 76px;
     padding-top: 94px;
@@ -51,6 +51,10 @@ body {
     color: #fff;
     background-color: #86786c;
     background-image: url(/image/announcement/person.png);
+}
+
+#snb .tit a {
+    color: #fff;
 }
 
 ul, ol, li {
@@ -236,4 +240,10 @@ tbody {
 .paging {
     margin-top: 60px;
     text-align: center;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
 }
