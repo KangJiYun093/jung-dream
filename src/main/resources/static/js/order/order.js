@@ -61,48 +61,66 @@ $(function() {
     /* 주문하기 버튼 눌렀을 때 정상적으로 정보가 들어있는지 검사 후 submit */
     $('#order-btn').on('click', () => {
         if(!$('input[name=orderName]').val()) {
-            alert('주문자 정보 이름을 입력하세요');
+            // alert('주문자 정보 이름을 입력하세요');
+            $('.text').text('주문자 정보 이름을 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=orderName]').focus();
             return;
         }
 
         if(!$('input[name=orderPhoneMiddle]').val()) {
-            alert('주문자 정보 휴대폰 번호를 입력하세요');
+            // alert('주문자 정보 휴대폰 번호를 입력하세요');
+            $('.text').text('주문자 정보 휴대폰 번호를 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=orderPhoneMiddle]').focus();
             return;
         }
 
         if(!$('input[name=orderPhoneEnd]').val()) {
-            alert('주문자 정보 휴대폰 번호를 입력하세요');
+            // alert('주문자 정보 휴대폰 번호를 입력하세요');
+            $('.text').text('주문자 정보 휴대폰 번호를 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=orderPhoneEnd]').focus();
             return;
         }
 
         if(!$('input[name=receiveName]').val()) {
-            alert('배송지 정보 이름을 입력하세요');
+            // alert('배송지 정보 이름을 입력하세요');
+            $('.text').text('배송지 정보 이름을 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=receiveName]').focus();
             return;
         }
 
         if(!$('input[name=receivePhoneMiddle]').val()) {
-            alert('배송지 정보 휴대폰 번호를 입력하세요');
+            // alert('배송지 정보 휴대폰 번호를 입력하세요');
+            $('.text').text('배송지 정보 휴대폰 번호를 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=receivePhoneMiddle]').focus();
             return;
         }
 
         if(!$('input[name=receivePhoneEnd]').val()) {
-            alert('배송지 정보 휴대폰 번호를 입력하세요');
+            // alert('배송지 정보 휴대폰 번호를 입력하세요');
+            $('.text').text('배송지 정보 휴대폰 번호를 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('input[name=receivePhoneEnd]').focus();
             return;
         }
 
         if(!$('#roadAddress').val() || !$('#postcode').val() || !$('.detail-address').val()) {
-            alert('배송지 정보 주소를 입력하세요');
+            // alert('배송지 정보 주소를 입력하세요');
+            $('.text').text('배송지 정보 주소를 입력하세요');
+            $('.modal-container').css('display', 'flex');
             $('.detail-address').focus();
             return;
         }
 
         document.orderForm.submit();
+    });
+
+    $('.modal-btn').on('click', () => {
+        $('.modal-container').hide();
     });
 
 });

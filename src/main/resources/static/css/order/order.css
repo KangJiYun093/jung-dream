@@ -338,3 +338,66 @@ select option {
     font-size: 20px;
     border-radius: 3px;
 }
+
+/* 모달 떴을 때 배경 */
+.modal-container{
+    display: none;
+    /* display: flex; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    transition: background-color .1s;
+    align-items: center;
+    background: rgba(0,0,0, .4);
+    padding: 0 24px;
+}
+
+/* 모달 형태 설정 */
+.modal {
+    display: flex;
+    justify-content: center;
+    width: 360px;
+    background: #fff;
+    animation: modal-show .3s;
+    border-radius: 12px;
+}
+
+/* 내용 윗부분 띄우기 */
+.modal-content {
+    margin-top: 40px;
+}
+
+.modal-major-content {
+    display: flex;
+}
+
+/* 항목 이름과 input 태그 띄우고 글씨 크기 설정 */
+.text {
+    font-size: 20px;
+    margin-bottom: 27px;
+}
+
+/* 버튼 div 부분 설정 */
+.modal-button {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* 버튼 설정 */
+.modal-btn {
+    border: 0;
+    background-color: rgb(102, 153, 204);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: cafe24air;
+    font-weight: lighter;
+}
