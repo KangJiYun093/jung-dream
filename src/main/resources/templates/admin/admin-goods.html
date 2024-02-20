@@ -14,8 +14,8 @@
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
-            <button id="cancel-btn">취소</button>
-            <button id="confirm-btn">확인</button>
+            <button class="confirm-btn">확인</button>
+            <button class="cancel-btn">취소</button>
         </div>
         </div>
     </div>
@@ -33,10 +33,28 @@
                         <option value="apple-juice">사과즙</option>
                     </select>
                 </div>
-                <div class="option-kind">
+                <div class="form-group">
+                    <label>제목</label> 
+                    <input class="form-control" name="title" required>
+                </div> 
+                <div class="form-group">
+				    <label>판매자</label> 
+                    <input class="form-control" name="name" required>
+			    </div>
+                <div class="form-group">
+                    <label>판매 단위</label> 
+                    <input class="form-control" name="sales-unit">
+                </div>
+                <div class="option-kind option-class">
                     <div class="form-group">
                         <label>규격</label> 
-                        <input class="form-control" name="form">
+             <!--            <select name="option">
+                                <option value="americano">1과</option>
+                                <option value="caffe latte">2과</option>
+                                <option value="espresso">3과</option>
+                                <option value="espresso">4과</option>
+                        </select> -->
+                        <input class="form-control" name="option">
                     </div>
                     <div class="form-group">
                         <label>개수</label> 
@@ -50,34 +68,27 @@
                         <label>가격</label> 
                         <input class="form-control" name="price">
                     </div>
+                    <div class="plus-min-btn">
+                        <img class="plus-btn" src="../../static/image/admin/plus.png">
+                        <img class="minus-btn" src="../../static/image/admin/minus.png">
+                      </div>
                     </div>
-            <div class="form-group">
-				<label>판매 단위</label> 
-                <input class="form-control" name="sales-unit">
-			</div>
-   <!--          <div class="form-group">
-				<label>포장 타입</label> 
-                <input type="text" value="박스 포장" class="form-control" name="package" readonly="">
-			</div> -->
-<!--             <div class="form-group">
-				<label>원산지</label> 
-                <input type="text" value="경상북도 봉화군" class="form-control" name="local" readonly="">
-			</div> -->
-            <div class="form-group">
-				<label>규격</label> 
-                <select name="option">
-                        <option value="americano">1과</option>
-                        <option value="caffe latte">2과</option>
-                        <option value="espresso">3과</option>
-                        <option value="espresso">4과</option>
-			</div>
+
+
             <div class="form-group">
 				<label>이미지 업로드</label>
                     <input type="file" class="image-upload" accept="image/*" multiple>
 			</div>
+            <div class="thumbnail">
+                <img src="../../static/image/admin/excel.png">
+                <img src="../../static/image/admin/excel.png">
+                <img src="../../static/image/admin/excel.png">
+                <img src="../../static/image/admin/excel.png">
+                <img src="../../static/image/admin/excel.png">
+            </div>
             <div class="writes">
+                <input class="notice-submit" type="submit" value="등록">
             <button class="cancel-btn">취소</button>
-            <input class="notice-submit" type="submit" value="등록">
             </div>
         </div>
             </form>
@@ -88,6 +99,18 @@
         <p>상품 상세 페이지</p>
         <div class="detail-wrapper">
             <div class="form-group">
+                <label>품종</label> 
+                <input class="form-control" name="kind-detail" readonly>
+			</div>
+            <div class="form-group">
+                <label>제목</label> 
+                <input class="form-control" name="title-detail" readonly>
+			</div>
+            <div class="form-group">
+                <label>판매자</label> 
+                <input class="form-control" name="seller-detail" readonly>
+			</div>
+            <div class="form-group">
                 <label>판매단위</label> 
                 <input class="form-control" name="saels-unit-detail" readonly>
             </div>
@@ -95,14 +118,24 @@
                 <label>중량/용량</label> 
                 <input class="form-control" name="weigh-detail" readonly>
             </div>
-            <div class="form-group">
-				<label>판매자</label> 
-                <input class="form-control" name="seller-detail" readonly>
-			</div>
-            <div class="form-group">
-				<label>규격</label> 
-                <input class="form-control" name="option-detail" readonly>
-			</div>
+            <div class="option-kind">
+                <div class="form-group">
+                    <label>규격</label> 
+                    <input class="form-control" name="option-detail" readonly>
+                </div>
+                <div class="form-group">
+                    <label>개수</label> 
+                    <input class="form-control" name="count-detail" readonly>
+                </div>
+                <div class="form-group">
+                    <label>키로수</label> 
+                    <input class="form-control" name="weigh-detail" readonly>
+                </div>
+                <div class="form-group">
+                    <label>가격</label> 
+                    <input class="form-control" name="price-detail" readonly>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="detail-images">
                 <label>첨부 파일</label>
@@ -115,8 +148,8 @@
             </div>
             </div>
             <div class="modal-buttons">
-                <button class="cancel-btn">취소</button>
-                <button id="confirm-btn">확인</button>
+                <button class="confirm-btn">확인</button>
+                <!-- <button class="cancel-btn">취소</button> -->
             </div>
             </div>
         </div>
@@ -274,4 +307,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
+<script src="../../static/js/admin/goods-admin.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

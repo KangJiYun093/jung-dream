@@ -17,8 +17,8 @@
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
-            <button id="cancel-btn">취소</button>
-            <button id="confirm-btn">확인</button>
+            <button class="confirm-btn">확인</button>
+            <button class="cancel-btn">취소</button>
         </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
                 <input class="form-control" name="goods-title" readonly>
 			</div>
             <div class="modal-buttons">
-                <button id="confirm-btn">확인</button>
+                <button class="confirm-btn">확인</button>
             </div>
             </div>
         </div>
@@ -133,11 +133,14 @@
            <div class="inner-wrapper">
                 <div class="title-wrapper">
                     <div class="page-title">주문 목록</div>
+                    <div class="excel-button"><img src="../../static/image/admin/excel.png">
+                    <div class="write-button">상태변경</div>
                     <div class="delete-button">삭제하기</div>
+                    </div>
                 </div>
 
 
-                <table id="inquiryTable">
+                <table id="order-table">
                     <thead>
                     <tr>
                         <th>
@@ -155,7 +158,7 @@
                         <th class="name">주문자 이름</th>
                         <th class="title">휴대폰 번호</th>
                         <th class="inquiry-content">제품명</th>
-                       <!--  <th class="writer inquiry-email">이메일 주소</th> -->
+                        <th class="state">주문상태</th>
                         <th class="answer">가격</th>
                         <th class="date">주문 일자</th>
                     </tr>
@@ -167,6 +170,7 @@
                             <td>정현진</td>
                             <td>010-1111-1111</td>
                             <td>상품명 입니다</td>
+                            <td>주문완료</td>
                             <td>45,000</td>
                             <td>2024-02-03</td>
                         </tr>
@@ -176,6 +180,7 @@
                             <td>정현진</td>
                             <td>010-1111-1111</td>
                             <td>상품명 입니다</td>
+                            <td>주문완료</td>
                             <td>45,000</td>
                             <td>2024-02-03</td>
                         </tr>
@@ -185,6 +190,7 @@
                             <td>정현진</td>
                             <td>010-1111-1111</td>
                             <td>상품명 입니다</td>
+                            <td>주문완료</td>
                             <td>45,000</td>
                             <td>2024-02-03</td>
                         </tr>
@@ -194,6 +200,7 @@
                             <td>정현진</td>
                             <td>010-1111-1111</td>
                             <td>상품명 입니다</td>
+                            <td>주문완료</td>
                             <td>45,000</td>
                             <td>2024-02-03</td>
                         </tr>
@@ -203,6 +210,7 @@
                             <td>정현진</td>
                             <td>010-1111-1111</td>
                             <td>상품명 입니다</td>
+                            <td>주문완료</td>
                             <td>45,000</td>
                             <td>2024-02-03</td>
                         </tr>

@@ -15,14 +15,14 @@
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
+            <button class="confirm-btn">확인</button>
             <button class="cancel-btn">취소</button>
-            <button id="confirm-btn">확인</button>
         </div>
         </div>
     </div>
     <!-- 글쓰기 모달창 -->
     <div id="write-modal" class="write-modal">
-        <div class="write-content">
+        <div class="write-content notice-write-content">
         <!-- <p>공지사항을 작성해주세요</p> -->
         <div class="modal-buttons">
             <form method="post">
@@ -37,6 +37,12 @@
             <div class="form-group">
 				<label>이미지 업로드</label>
                     <input type="file" class="image-upload" accept="image/*" required multiple>
+                    <div class="thumbnail">
+                        <img src="../../static/image/admin/excel.png">
+                        <img src="../../static/image/admin/excel.png">
+                        <img src="../../static/image/admin/excel.png">
+                    </div>
+                    
 			</div>
             <div class="writes">
             <button class="cancel-btn">취소</button>
@@ -62,7 +68,7 @@
         </div>
         <div class="form-group">
             <label>내용</label>
-                <textarea class="form-control" rows="10" name="inquiry-content" readonly></textarea>
+                <textarea class="form-control" rows="10" name="notice-content" readonly></textarea>
         </div>
         <div class="form-group">
             <div class="detail-images">
@@ -76,13 +82,21 @@
         </div>
         </div>
         <div class="modal-buttons">
-            <button class="cancel-btn">취소</button>
-            <button id="confirm-btn">확인</button>
+            <button class="confirm-btn">확인</button>
+            <!-- <button class="cancel-btn">취소</button> -->
         </div>
         </div>
     </div>
+    <!-- 상세 이미지 모달 -->
+    <div class="image-show-modal">
+        <button>&times;</button>
+        <div class="modalBox">
+            <img src="../../static/image/admin/search.png" alt="">
+            <p></p>
+        </div>
     </div>
-    
+    <!-- 상세 이미지 모달 -->
+    </div>
     <!-- 모달 -->
 
     <!-- 헤더 -->
@@ -112,6 +126,9 @@
                         </li>
                         <li class="menu">
                             <a class="menus" href="/admin/admin-notice">공지 관리</a>
+                        </li>
+                        <li class="menu">
+                            <a class="menus" href="/admin/admin-notice">문의 관리</a>
                         </li>
                         <li class="menu">
                             <a class="menus" href="/admin/admin-inquiry">품종 관리</a>

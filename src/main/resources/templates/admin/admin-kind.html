@@ -33,35 +33,24 @@
                     <option value="apple-juice">사과즙</option>
                 </select>
 			</div>
-            <div class="form-group">
+<!--             <div class="form-group">
 				<label>판매자</label> 
                 <input class="form-control" name="name">
 			</div>
             <div class="form-group">
 				<label>제목</label> 
                 <input class="form-control" name="title">
-			</div>
-            <div class="option-kind">
-            <div class="form-group">
-				<label>규격</label> 
-                <input class="form-control" name="form">
-			</div>
-            <div class="form-group">
-                <label>개수</label> 
-                <input class="form-control" name="count">
-            </div>
-            <div class="form-group">
-                <label>키로수</label> 
-                <input class="form-control" name="weigh">
-            </div>
-            <div class="form-group">
-                <label>가격</label> 
-                <input class="form-control" name="price">
-            </div>
-        </div>
+			</div> -->
+                <div class="kind-checkbox">
+                  <div class="kind-option"><input type="checkbox" class ="chk"><p>규격</p></div>
+                  <div class="kind-option"><input type="checkbox" class ="chk"><p>개수</p></div>
+                  <div class="kind-option"><input type="checkbox" class ="chk"><p>키로수</p></div>
+                  <div class="kind-option"><input type="checkbox" class ="chk"><p>가격</p></div>
+                </div>
+
             <div class="writes">
+                <input class="notice-submit" type="submit" value="등록">
             <button class="cancel-btn">취소</button>
-            <input class="notice-submit" type="submit" value="등록">
             </div>
         </div>
             </form>
@@ -75,35 +64,15 @@
                 <label>품종</label> 
                 <input class="form-control" name="kind-detail" readonly>
             </div>
-            <div class="form-group">
-                <label>판매자</label> 
-                <input class="form-control" name="seller-detail" readonly>
-            </div>
-            <div class="form-group">
-                <label>제목</label> 
-                <input class="form-control" name="title-detail" readonly>
-            </div>
-            <div class="option-kind">
-            <div class="form-group sub-object">
-                <label>규격</label> 
-                <input class="form-control" name="form-detail" readonly>
-            </div>
-            <div class="form-group sub-object">
-				<label>개수</label> 
-                <input class="form-control" name="count-detail" readonly>
-			</div>
-            <div class="form-group sub-object">
-				<label>키로수</label> 
-                <input class="form-control" name="weigh-detail" readonly>
-			</div>
-            <div class="form-group sub-object">
-				<label>가격</label> 
-                <input class="form-control" name="price-detail" readonly>
-			</div>
-        </div>
+            <div class="kind-checkbox">
+                <div class="kind-option"><input type="checkbox" class ="chk"><p>규격</p></div>
+                <div class="kind-option"><input type="checkbox" class ="chk"><p>개수</p></div>
+                <div class="kind-option"><input type="checkbox" class ="chk"><p>키로수</p></div>
+                <div class="kind-option"><input type="checkbox" class ="chk"><p>가격</p></div>
+              </div>
             <div class="modal-buttons">
-                <button class="cancel-btn">취소</button>
-                <button id="confirm-btn">확인</button>
+                <!-- <button class="cancel-btn">취소</button> -->
+                <button class="confirm-btn">확인</button>
         </div>
             </div>
         </div>
@@ -260,4 +229,5 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
+<script src="../../static/js/admin/kind-admin.js"></script>
 </html>
