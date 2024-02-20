@@ -32,6 +32,13 @@ $('.cancel-btn').on('click', function(){
     $('#write-modal').css('display','none');
     $('#delete-modal').css('display','none');
 });
+
+$('.confirm-btn').on('click', function(){
+    console.log("확인 버튼");
+    $('#write-modal').css('display','none');
+    $('#delete-modal').css('display','none');
+    $('#detail-modal').css('display','none');
+});
 /* modal */
 
 /* date format*/
@@ -79,4 +86,62 @@ $(document).ready(function() {
     })
 })
 
+
+/* 이미지 팝업 모달 */
+$(document).ready(function() {
+    $('.detail-images img').click(function(){
+        console.log("이미지 클릭");
+        $('.image-show-modal').show();
+        console.log("모달 열기");
+    })
+})
+
+$(".image-show-modal button").click(function(){
+    $(".image-show-modal").hide();
+});
+
+
+// $(document).ready(function() {
+//     $('.plus-btn').click(function(){
+//         console.log("플러스 버튼 클릭");
+//         $('.plus-btn').parent().parent().prev().append(`<br><div class="option-kind">
+//         <div class="form-group">
+//             <label>규격</label> 
+//             <input class="form-control" name="option">
+//         </div>
+//         <div class="form-group">
+//             <label>개수</label> 
+//             <input class="form-control" name="count">
+//         </div>
+//         <div class="form-group">
+//             <label>키로수</label> 
+//             <input class="form-control" name="weigh">
+//         </div>
+//         <div class="form-group">
+//             <label>가격</label> 
+//             <input class="form-control" name="price">
+//         </div>
+//         <div class="plus-min-btn">
+//             <img class="plus-btn" src="../../static/image/admin/plus.png">
+//             <img class="minus-btn" src="../../static/image/admin/minus.png">
+//           </div>
+//         </div>`);
+//         console.log("플러스 추가");
+//     })
+// })
+
+
+$(document).ready(function() {
+    var parentElement = $('.plus-btn').parent().parent().prev();
+    console.log(parentElement);
+});
+
+
+$(document).ready(function() {
+    $('.minus-btn').click(function(){
+        console.log("마이너스 버튼 클릭");
+        $('.minus-btn').remove('');
+        console.log("플러스 추가");
+    })
+})
 

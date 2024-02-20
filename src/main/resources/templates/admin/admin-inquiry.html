@@ -15,8 +15,8 @@
         <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <div class="modal-buttons">
-            <button class="cancel-btn">취소</button>
             <button id="confirm-btn">확인</button>
+            <button class="cancel-btn">취소</button>
         </div>
         </div>
     </div>
@@ -84,13 +84,21 @@
 					<textarea class="form-control" rows="10" name="inquiry-answer-content"></textarea>
 			</div>
             <div class="modal-buttons">
-                <button class="cancel-btn">취소</button>
-                <button id="confirm-btn">확인</button>
+                <button class="confirm-btn">확인</button>
+                <!-- <button class="cancel-btn">취소</button> -->
             </div>
             </div>
         </div>
         </div>
         <!-- 상세 페이지 모달 -->
+        <!-- 이미지 팝업 모달 -->
+        <div class="image-show-modal">
+            <button>&times;</button>
+            <div class="modalBox">
+                <img src="../../static/image/admin/search.png" alt="">
+                <p></p>
+            </div>
+        </div>
     </div>
     <!-- 모달 -->
     <!-- 헤더 -->
@@ -244,6 +252,5 @@
 
 </script>
 <script src="../../static/js/admin/admin.js"></script>
-<script src="/js/admin/inquiry-list-search.js"></script>
 <script src="../../static/js/admin/checkbox.js"></script>
 </html>
