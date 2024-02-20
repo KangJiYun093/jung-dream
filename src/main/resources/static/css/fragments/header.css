@@ -6,6 +6,8 @@
   z-index: 50;
   height: 121px;
   background: #fff;
+  margin: 0 auto; 
+  max-width: 1200px; 
 }
 
 .logo {

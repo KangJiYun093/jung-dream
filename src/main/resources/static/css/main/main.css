@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+div {
+  font-weight: normal;
+  display: block;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+#container {
+  width: 100%;
+  padding-bottom: 120px;
+  margin: 0 auto;
+}
+
+.mainSecB {
+  padding: 80px 0 0;
+  background: #fff;
+}
+
+.mainSecB .wrap {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.main h2.typeA {
+  margin: 80px 0 40px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1em;
+  color: #1a1811;
+}
+
+.mainSecB h2.typeA:first-child {
+  margin-top: 0;
+}
+
+.slideCont1 {
+  overflow: hidden;
+}
+
+.pdList {
+  overflow: hidden;
+  width: 10000px;
+  padding-bottom: 60px;
+  border-top: 0;
+}
+
+.pdList li {
+  position: relative;
+  float: left;
+  width: 256px;
+  margin: 0 25px 40px 0;
+  background: #fff;
+}
+
+.pdList li>a {
+  color: #666;
+  text-decoration: none;
+}
+
+.pdList li {
+  padding-bottom: 0;
+  margin-top: 0;
+  background: none;
+}
+
+.pdList li .thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.pdList li .thumb img {
+  width: 256px;
+  height: 275px;
+  
+}
+
+.pdList li .tit {
+  margin-top: 18px;
+  font-family: 'nsb';
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #333;
+  word-break: keep-all;
+}
+
+.pdList li .cont {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.5em;
+  color: #888;
+  word-break: keep-all;
+}
+
+.pdList li .price {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.pdList li .price strong {
+  font-size: 20px;
+  font-family: 'nsb';
+}
+
+.pdList li .icon {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  overflow: hidden;
+}
+
+.pdList li .icon span {
+  float: left;
+  padding: 0 6px;
+  margin-right: 4px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #fff;
+  background: #59621d;
+}
+
