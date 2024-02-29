@@ -100,40 +100,40 @@
         <div class="detail-wrapper">
             <div class="form-group">
                 <label>품종</label> 
-                <input class="form-control" name="kind-detail" readonly>
+                <input class="form-control" name="kind-detail">
 			</div>
             <div class="form-group">
                 <label>제목</label> 
-                <input class="form-control" name="title-detail" readonly>
+                <input class="form-control" name="title-detail">
 			</div>
             <div class="form-group">
                 <label>판매자</label> 
-                <input class="form-control" name="seller-detail" readonly>
+                <input class="form-control" name="seller-detail">
 			</div>
             <div class="form-group">
                 <label>판매단위</label> 
-                <input class="form-control" name="saels-unit-detail" readonly>
+                <input class="form-control" name="saels-unit-detail">
             </div>
             <div class="form-group">
                 <label>중량/용량</label> 
-                <input class="form-control" name="weigh-detail" readonly>
+                <input class="form-control" name="weigh-detail">
             </div>
             <div class="option-kind">
                 <div class="form-group">
                     <label>규격</label> 
-                    <input class="form-control" name="option-detail" readonly>
+                    <input class="form-control" name="option-detail">
                 </div>
                 <div class="form-group">
                     <label>개수</label> 
-                    <input class="form-control" name="count-detail" readonly>
+                    <input class="form-control" name="count-detail">
                 </div>
                 <div class="form-group">
                     <label>키로수</label> 
-                    <input class="form-control" name="weigh-detail" readonly>
+                    <input class="form-control" name="weigh-detail">
                 </div>
                 <div class="form-group">
                     <label>가격</label> 
-                    <input class="form-control" name="price-detail" readonly>
+                    <input class="form-control" name="price-detail">
                 </div>
             </div>
             <div class="form-group">
@@ -148,8 +148,10 @@
             </div>
             </div>
             <div class="modal-buttons">
-                <button class="confirm-btn">확인</button>
-                <!-- <button class="cancel-btn">취소</button> -->
+                <form method="post">
+                <button class="confirm-btn">수정</button>
+                </form>
+                <button class="cancel-btn">취소</button>
             </div>
             </div>
         </div>
@@ -218,6 +220,7 @@
             <!-- 상품 목록 창 -->        
                 <ul class="goods-list">
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -226,6 +229,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -234,6 +238,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -242,6 +247,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -250,6 +256,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -258,6 +265,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -266,6 +274,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -274,6 +283,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -282,6 +292,7 @@
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
                                 <img src="../../static/image/admin/search.png">
                             </div>
@@ -308,5 +319,5 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
 <script src="../../static/js/admin/goods-admin.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../../static/js/admin/checkbox.js"></script>
 </html>

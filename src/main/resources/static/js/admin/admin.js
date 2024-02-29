@@ -77,7 +77,6 @@ $(document).ready(function() {
     })
 })
 
-
 $(document).ready(function() {
     $('li').click(function(){
         console.log("상세 항목 클릭");
@@ -85,7 +84,6 @@ $(document).ready(function() {
         console.log("모달 열기");
     })
 })
-
 
 /* 이미지 팝업 모달 */
 $(document).ready(function() {
@@ -99,36 +97,6 @@ $(document).ready(function() {
 $(".image-show-modal button").click(function(){
     $(".image-show-modal").hide();
 });
-
-
-// $(document).ready(function() {
-//     $('.plus-btn').click(function(){
-//         console.log("플러스 버튼 클릭");
-//         $('.plus-btn').parent().parent().prev().append(`<br><div class="option-kind">
-//         <div class="form-group">
-//             <label>규격</label> 
-//             <input class="form-control" name="option">
-//         </div>
-//         <div class="form-group">
-//             <label>개수</label> 
-//             <input class="form-control" name="count">
-//         </div>
-//         <div class="form-group">
-//             <label>키로수</label> 
-//             <input class="form-control" name="weigh">
-//         </div>
-//         <div class="form-group">
-//             <label>가격</label> 
-//             <input class="form-control" name="price">
-//         </div>
-//         <div class="plus-min-btn">
-//             <img class="plus-btn" src="../../static/image/admin/plus.png">
-//             <img class="minus-btn" src="../../static/image/admin/minus.png">
-//           </div>
-//         </div>`);
-//         console.log("플러스 추가");
-//     })
-// })
 
 
 $(document).ready(function() {
