@@ -33,14 +33,6 @@
                     <option value="apple-juice">사과즙</option>
                 </select>
 			</div>
-<!--             <div class="form-group">
-				<label>판매자</label> 
-                <input class="form-control" name="name">
-			</div>
-            <div class="form-group">
-				<label>제목</label> 
-                <input class="form-control" name="title">
-			</div> -->
                 <div class="kind-checkbox">
                   <div class="kind-option"><input type="checkbox" class ="chk"><p>규격</p></div>
                   <div class="kind-option"><input type="checkbox" class ="chk"><p>개수</p></div>
@@ -143,15 +135,7 @@
             <thead>
             <tr>
                 <th>
-                    <!-- 체크박스 -->
-                    <div class="checkbox-wrapper-21">
-                        <label class="control control--checkbox">
-                            <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
-                            <div class="control__indicator"></div>
-                        </label>
-                    </div>
-                    <!-- 체크박스 -->
-                    <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                    <input type="checkbox" class="all-check" id="all-check">
                 </th>
                 <th class="number">번호</th>
                 <th class="kind-table">품종</th>
@@ -162,7 +146,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -170,7 +154,7 @@
                     <td>2024-02-03</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -178,7 +162,7 @@
                     <td>2024-02-03</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -186,7 +170,7 @@
                     <td>2024-02-03</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -194,7 +178,7 @@
                     <td>2024-02-03</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -202,7 +186,7 @@
                     <td>2024-02-03</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><input type="checkbox" name="check"></td>
                     <td>1</td>
                     <td>사과</td>
                     <td>강지윤</td>
@@ -230,4 +214,5 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
 <script src="../../static/js/admin/kind-admin.js"></script>
+<script src="../../static/js/admin/checkbox.js"></script>
 </html>

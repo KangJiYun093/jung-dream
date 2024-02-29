@@ -45,8 +45,8 @@
                     
 			</div>
             <div class="writes">
-            <button class="cancel-btn">취소</button>
-            <input class="notice-submit" type="submit" value="등록">
+                <input class="notice-submit" type="submit" value="등록">
+                <button class="cancel-btn">취소</button>
             </div>
         </div>
             </form>
@@ -60,11 +60,11 @@
     <div class="detail-wrapper">
         <div class="form-group">
             <label>제목</label> 
-            <input class="form-control" name="notice-title" readonly>
+            <input class="form-control" name="notice-title">
         </div>
         <div class="form-group">
             <label>작성일</label> 
-            <input class="form-control" name="notice-date" readonly>
+            <input class="form-control" name="notice-date">
         </div>
         <div class="form-group">
             <label>내용</label>
@@ -82,8 +82,8 @@
         </div>
         </div>
         <div class="modal-buttons">
-            <button class="confirm-btn">확인</button>
-            <!-- <button class="cancel-btn">취소</button> -->
+            <button class="confirm-btn">수정</button>
+            <button class="cancel-btn">취소</button>
         </div>
         </div>
     </div>
@@ -164,15 +164,7 @@
                         <thead>
                         <tr>
                             <th>
-                                <!-- 체크박스 -->
-                                <div class="checkbox-wrapper-21">
-                                    <label class="control control--checkbox">
-                                        <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
-                                        <div class="control__indicator"></div>
-                                    </label>
-                                </div>
-                                <!-- 체크박스 -->
-                                <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                                <input type="checkbox" class="all-check" id="all-check">
                             </th>
                             <th class="number">번호</th>
                             <th class="notice-title">제목</th>
@@ -183,42 +175,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데 어떻게 생각..</td>
                                 <td>2024-02-03</td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>위에 내용처럼 일정 부분만 표시되게 하는 게 좋지 않을까요</td>
                                 <td>2024-02-03</td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>공지사항 예시입니다 내용입니다 컨텐츠입니다</td>
                                 <td>2024-02-03</td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
                                 <td>2024-02-03</td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
                                 <td>2024-02-03</td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td><input type="checkbox" name="check"></td>
                                 <td>1</td>
                                 <td>공지사항입니다</td>
                                 <td>글 내용이 보이다가 일정 부분에서 짤리는게 좋을 것 같은데</td>
@@ -243,6 +235,5 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
-<!-- <script src="../../static/admin/inquiry-list-search.js"></script> -->
-<script src="../../static/admin/checkbox.js"></script>
+<script src="../../static/js/admin/checkbox.js"></script>
 </html>

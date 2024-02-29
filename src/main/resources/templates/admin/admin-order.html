@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>주문 페이지</title>
     <link rel="stylesheet" href="../../static/css/admin/admin.css">
-    <link rel="stylesheet" href="/css/admin/user.css">
-    <link rel="stylesheet" href="/css/admin/sale-board.css">
 </head>
 <body>
     <!-- 모달 -->
@@ -144,15 +142,7 @@
                     <thead>
                     <tr>
                         <th>
-                            <!-- 체크박스 -->
-                            <div class="checkbox-wrapper-21">
-                                <label class="control control--checkbox">
-                                    <input type="checkbox" id="select-all" class="substituted" style="display: none;"/>
-                                    <div class="control__indicator"></div>
-                                </label>
-                            </div>
-                            <!-- 체크박스 -->
-                            <!-- <input type="checkbox" id="select-all" class="substituted"> -->
+                            <input type="checkbox" class="all-check" id="all-check">
                         </th>
                         <th class="number">번호</th>
                         <th class="name">주문자 이름</th>
@@ -165,7 +155,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td><input type="checkbox" name="check"></td>
                             <td>1</td>
                             <td>정현진</td>
                             <td>010-1111-1111</td>
@@ -175,7 +165,7 @@
                             <td>2024-02-03</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><input type="checkbox" name="check"></td>
                             <td>1</td>
                             <td>정현진</td>
                             <td>010-1111-1111</td>
@@ -185,7 +175,7 @@
                             <td>2024-02-03</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><input type="checkbox" name="check"></td>
                             <td>1</td>
                             <td>정현진</td>
                             <td>010-1111-1111</td>
@@ -195,7 +185,7 @@
                             <td>2024-02-03</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><input type="checkbox" name="check"></td>
                             <td>1</td>
                             <td>정현진</td>
                             <td>010-1111-1111</td>
@@ -205,7 +195,7 @@
                             <td>2024-02-03</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><input type="checkbox" name="check"></td>
                             <td>1</td>
                             <td>정현진</td>
                             <td>010-1111-1111</td>
@@ -234,7 +224,5 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../static/js/admin/admin.js"></script>
-<script src="/js/admin/user.js"></script>
-<script src="/js/admin/checkbox.js"></script>
-<script src="/js/admin/purchaseboard-search.js"></script>
+<script src="../../static/js/admin/checkbox.js"></script>
 </html>
