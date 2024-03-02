@@ -14,7 +14,17 @@
         <setting name="autoMappingUnknownColumnBehavior" value="FAILING" />					<!-- 매핑이 실패시 SqlSessionException 출력 -->
     </settings>
 
-<!--    <typeAliases>-->
-<!--        <typeAlias type="com.app.work.domain.dto.member.MemberDto" alias="memberDto"/>-->
-<!--    </typeAliases>-->
+    <typeAliases>
+        <typeAlias type="com.app.jungdream.domain.vo.AnswerVO" alias="answerVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.CartVO" alias="cartVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.InquiryVO" alias="inquiryVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.InquiryFileVO" alias="fileVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.NoticeVO" alias="noticeVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.NoticeFileVO" alias="noticeFileVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.OrderVO" alias="orderVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.ProductVO" alias="productVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.ProductOptionVO" alias="productOptionVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.ProductRegistrationVO" alias="productRegistrationVO"/>
+        <typeAlias type="com.app.jungdream.domain.vo.ProductFileVO" alias="productFileVO"/>
+    </typeAliases>
 </configuration>
