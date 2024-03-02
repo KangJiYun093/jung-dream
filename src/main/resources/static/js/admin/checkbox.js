@@ -16,7 +16,7 @@
 $("input[name=check]").click(function() {
     var total = $("input[name=check]").length;
     var checked = $("input[name=check]:checked").length;
-
+    
     if(total != checked) {
         $(".all-check").prop("checked", false);
     } else {

@@ -750,3 +750,11 @@ th{
 .all-check, .goods-list{
   pointer-events: all;
 }
+
+.goods-buttons{
+  width: 0%;
+}
+
+.arrow-left img, .arrow-right img{
+  width: 25px;
+}
