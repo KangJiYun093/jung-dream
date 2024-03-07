@@ -26,6 +26,12 @@ body {
     margin: 0 auto;
 }
 
+#main-container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 #snb {
     float: left;
     width: 190px;

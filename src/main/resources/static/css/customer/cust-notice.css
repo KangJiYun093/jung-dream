@@ -2,7 +2,14 @@ div {
     display: block;
 }
 
-body {
+/*body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -24,6 +31,12 @@ body {
     width: 1100px;
     padding-bottom: 120px;
     margin: 0 auto;
+}
+
+#main-container:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 #snb {
