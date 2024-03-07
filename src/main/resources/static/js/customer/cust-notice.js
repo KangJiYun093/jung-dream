@@ -2,7 +2,7 @@
 $(() => {
     $("#tit-anno, #tit-center").on("click", () => {
         console.log("Click event triggered");
-        location.href = "../customer/cust-announce.html";
+        location.href = "../customer/cust-notice.html";
     });
 });
 
