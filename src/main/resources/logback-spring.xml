@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
     <!-- 윈도우 -->
-    <property name="LOG_PATH" value="D:/www/log" />
+    <property name="LOG_PATH" value="C:/www/log" />
     <!-- 리눅스 -->
     <!--    <property name="LOG_PATH" value="/data/cnet/www/log" /> -->
     <property name="LOG_FILE_NAME" value="crec_boot_st" />
