@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1:1문의 페이지</title>
-    <link rel="stylesheet" href="/css/fragments/header.css">
-    <link rel="stylesheet" href="/css/fragments/footer.css">
-    <link rel="stylesheet" href="/css/customer/cust-inquiry-form.css">
+    <link rel="stylesheet" href="../../static/css/customer/cust-inquiry-form.css">
 </head>
 <body>
-    <header id="header" th:replace="fragments/header :: header"></header>
     <!-- 삭제 모달 -->
-    <div id="deleteCont-modal" class="deleteCont-modal" style="display: block;">
+    <div id="deleteCont-modal" class="deleteCont-modal" style="display: none;">
         <div class="modal-content">
             <h2>작성 내용 삭제</h2>
         <p>현재 페이지를 나가시면</p>
@@ -86,21 +83,24 @@
                                 <td>
                                     <p class="fileBox">
                                         <input type="text" id="fileText" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image" name="image" onchange="$('#fileText').val($('#image').val())"> -->
-                                        </span>
+                                        <label for="file1">파일첨부</label>
+                                        <input type="file" id="file">
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
+                                        <!-- </span> -->
                                     </p>
                                     <p class="fileBox">
                                         <input type="text" id="fileText2" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image2" name="image2" onchange="$('#fileText2').val($('#image2').val())"> -->
-                                        </span>
+                                        <label for="file">파일첨부</label>
+                                        <input type="file" id="file2">
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
+                                        <!-- </span> -->
                                     </p>
                                     <p class="fileBox">
                                         <input type="text" id="fileText3" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image3" name="image3" onchange="$('#fileText3').val($('#image3').val())"> -->
-                                        </span>
+                                        <label for="file">파일첨부</label>
+                                        <input type="file" id="file3">
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
+                                        <!-- </span> -->
                                     </p>
                                 </td>
                             </tr>
@@ -114,11 +114,10 @@
             </div>
         </div>
     </div>
-    <footer id="footer" th:replace="fragments/footer :: footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/customer/cust-notice-detail.js"></script>
-<script src="/js/customer/cust-notice.js"></script>
-<script src="/js/customer/cust-inquiry-form.js"></script>
-<script src="/js/customer/cust-inquiry-list.js"></script>
+<script src="../../static/js/customer/cust-announce-detail.js"></script>
+<script src="../../static/js/customer/cust-announce.js"></script>
+<!-- <script src="../../static/js/customer/cust-inquiry-form.js"></script> -->
+<script src="../../static/js/customer/cust-inquiry-list.js"></script>
 </html>

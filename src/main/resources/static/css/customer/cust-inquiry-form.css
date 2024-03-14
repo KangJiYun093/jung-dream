@@ -26,12 +26,6 @@ body {
     margin: 0 auto;
 }
 
-#main-container:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
 #snb {
     float: left;
     width: 190px;
@@ -394,3 +388,61 @@ a {
     color: #fff;
     border: 0;
   }
+
+  .filebox .fileText {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+
+.filebox label {
+    display: inline-block;
+    min-width: 90px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    /* color: #00663369; */
+    font-size: 13px;
+    font-family: 'nsb';
+    /* font-weight: 500px; */
+    box-sizing: border-box;
+    background-color: #59621d;
+}
+
+/* .file .btnTypeB{
+
+    display: inline-block;
+    min-width: 90px;
+    height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff !important;
+    font-size: 13px;
+    font-family: 'nsb';
+    box-sizing: border-box;
+    background: #59621d;
+} */
+
+/* .filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+} */
+
+input[type="file" i] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
