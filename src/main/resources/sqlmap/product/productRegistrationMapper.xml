@@ -21,8 +21,10 @@
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
     <insert id="insertProductRegistration">
         insert into tbl_product_registration
-        (product_registration_name, product_registration_specification, product_registration_weight, product_registration_quantity, product_registration_price)
-        values(#{productRegistrationName}, #{productRegistrationSpecification}, #{productRegistrationWeight}, #{productRegistrationQuantity}, #{productRegistrationPrice})
+        (product_registration_name, product_registration_specification, product_registration_weight,
+         product_registration_quantity, product_registration_price)
+        values(#{productRegistrationName}, coalesce(#{productRegistrationSpecification}, 'N'), coalesce(#{productRegistrationWeight}, 'N'),
+               coalesce(#{productRegistrationQuantity}, 'N'), coalesce(#{productRegistrationPrice}, 'N'))
     </insert>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->

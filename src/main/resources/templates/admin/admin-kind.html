@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>품종 등록 페이지</title>
-    <link rel="stylesheet" href="../../static/css/admin/admin.css">
-    <link rel="stylesheet" href="../../static/css/admin/admin-goods.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="stylesheet" href="/css/admin/admin-goods.css">
 </head>
 <body>
      <!-- 모달 -->
@@ -24,28 +24,36 @@
     <div id="write-modal" class="write-modal">
         <div class="write-content">
         <!-- <p>공지사항을 작성해주세요</p> -->
-        <div class="modal-buttons">
-            <form method="post">
-            <div class="form-group kind-select">
-				<label>품종</label> 
-                <select>
-                    <option value="apple">사과</option>
-                    <option value="apple-juice">사과즙</option>
-                </select>
-			</div>
-                <div class="kind-checkbox">
-                  <div class="kind-option"><input type="checkbox" class ="chk"><p>규격</p></div>
-                  <div class="kind-option"><input type="checkbox" class ="chk"><p>개수</p></div>
-                  <div class="kind-option"><input type="checkbox" class ="chk"><p>키로수</p></div>
-                  <div class="kind-option"><input type="checkbox" class ="chk"><p>가격</p></div>
-                </div>
-
-            <div class="writes">
-                <input class="notice-submit" type="submit" value="등록">
-            <button class="cancel-btn">취소</button>
+            <div class="modal-buttons">
+                <form method="post" th:action="@{/admin/kind}" name="productRegistrationInsertForm">
+                    <div class="form-group kind-select">
+                        <label>품종</label>
+                        <!--                <select>-->
+                        <!--                    <option value="apple">사과</option>-->
+                        <!--                    <option value="apple-juice">사과즙</option>-->
+                        <!--                </select>-->
+                        <input type="text" name="productRegistrationName">
+                    </div>
+                    <div class="kind-checkbox">
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationSpecification" value="Y"><p>규격</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationWeight" value="Y"><p>키로수</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationQuantity" value="Y"><p>개수</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationPrice" value="Y"><p>가격</p>
+                        </div>
+                    </div>
+                    <div class="writes">
+                        <input class="notice-submit" id="insert-button" type="button" value="등록">
+                        <button class="cancel-btn" type="button">취소</button>
+                    </div>
+                </form>
             </div>
-        </div>
-            </form>
         </div>
     </div>
     <div id="detail-modal" class="detail-modal">
@@ -115,7 +123,7 @@
                     <form action="" class="search__searchbox__form">
                         <input id="searchbox" type="text" placeholder="원하시는 키워드로 검색해보세요" maxlength="40"/>
                         <button type="button" class="search__searchbox__button">
-                            <img src="../../static/image/admin/search.png"/>
+                            <img src="/image/admin/search.png"/>
                         </button>
                     </form>
                 </div>
@@ -199,7 +207,7 @@
 
         <div class="pages-wrapper">
             <div class="arrow-left">
-                <img src="../../static/image/admin/arrow-left.png">
+                <img src="/image/admin/arrow-left.png">
             </div>
             <div class="page active">1</div>
             <div class="page">2</div>
@@ -207,16 +215,16 @@
             <div class="page">4</div>
             <div class="page">5</div>
             <div class="arrow-right">
-                <img src="../../static/image/admin/arrow-right.png">
+                <img src="/image/admin/arrow-right.png">
             </div>
         </div>
     </div>
-</content>
+    </content>
         <!-- contents -->
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/admin/admin.js"></script>
-<script src="../../static/js/admin/kind-admin.js"></script>
-<script src="../../static/js/admin/checkbox.js"></script>
+<script src="/js/admin/admin.js"></script>
+<script src="/js/admin/kind.js"></script>
+<script src="/js/admin/checkbox.js"></script>
 </html>
