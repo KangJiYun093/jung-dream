@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/admin/admin-goods.css">
 </head>
 <body>
-     <!-- 모달 -->
+    <!-- 모달 -->
     <!-- 삭제 모달창 -->
     <div id="delete-modal" class="delete-modal">
         <div class="modal-content">
@@ -20,19 +20,57 @@
         </div>
     </div>
     <!-- 모달 -->
-       <!-- 글쓰기 모달창 -->
+    <!-- 등록 모달창 -->
     <div id="write-modal" class="write-modal">
         <div class="write-content">
         <!-- <p>공지사항을 작성해주세요</p> -->
             <div class="modal-buttons">
-                <form method="post" th:action="@{/admin/kind}" name="productRegistrationInsertForm">
+                <form method="post" th:action="@{/admin/kind-save}" name="productRegistrationInsertForm">
                     <div class="form-group kind-select">
                         <label>품종</label>
                         <!--                <select>-->
                         <!--                    <option value="apple">사과</option>-->
                         <!--                    <option value="apple-juice">사과즙</option>-->
                         <!--                </select>-->
-                        <input type="text" name="productRegistrationName">
+                        <input type="text" name="productRegistrationName" id="insert-name">
+                    </div>
+                    <div class="kind-checkbox">
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationSpecification" id="insert-specification" value="Y"><p>규격</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationWeight" id="insert-weight" value="Y"><p>키로수</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationQuantity" id="insert-quantity" value="Y"><p>개수</p>
+                        </div>
+                        <div class="kind-option">
+                            <input type="checkbox" class ="chk" name="productRegistrationPrice" id="insert-price" value="Y"><p>가격</p>
+                        </div>
+                    </div>
+                    <div class="writes">
+                        <input class="notice-submit" id="insert-button" type="button" value="등록">
+                        <button class="cancel-btn" type="button">취소</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 등록 모달창 끝 -->
+    <!-- 수정 모달창 -->
+    <div id="edit-modal" class="write-modal">
+        <div class="write-content">
+        <!-- <p>공지사항을 작성해주세요</p> -->
+            <div class="modal-buttons">
+                <form method="post" th:action="@{/admin/kind-edit}" name="productRegistrationUpdateForm">
+                    <input type="hidden" name="productRegistrationId">
+                    <div class="form-group kind-select">
+                        <label>품종</label>
+<!--                            <select>-->
+<!--                                <option value="apple">사과</option>-->
+<!--                                <option value="apple-juice">사과즙</option>-->
+<!--                            </select>-->
+                        <input type="text" name="productRegistrationName" id="update-name">
                     </div>
                     <div class="kind-checkbox">
                         <div class="kind-option">
@@ -49,13 +87,14 @@
                         </div>
                     </div>
                     <div class="writes">
-                        <input class="notice-submit" id="insert-button" type="button" value="등록">
+                        <input class="notice-submit" id="edit-button" type="button" value="등록">
                         <button class="cancel-btn" type="button">취소</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- 수정 모달창 끝 -->
     <div id="detail-modal" class="detail-modal">
         <div class="detail-content modal-background">
         <p>상품 상세 페이지</p>
@@ -135,95 +174,49 @@
                     <div class="button-class">
                         <div class="write-button">등록하기</div>
                         <div class="delete-button">삭제하기</div>
-                        </div>
                     </div>
+                </div>
 
-           <!-- 본문 -->
-           <table id="kind-table">
-            <thead>
-            <tr>
-                <th>
-                    <input type="checkbox" class="all-check" id="all-check">
-                </th>
-                <th class="number">번호</th>
-                <th class="kind-table">품종</th>
-                <th class="kind-seller">판매자</th>
-                <th class="kind-title">제목</th>
-                <th class="date">등록일</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="check"></td>
-                    <td>1</td>
-                    <td>사과</td>
-                    <td>강지윤</td>
-                    <td>당도 높은 사과 1box</td>
-                    <td>2024-02-03</td>
-                </tr>
-                
-            </tbody>
-        </table>
-
-        <div class="pages-wrapper">
-            <div class="arrow-left">
-                <img src="/image/admin/arrow-left.png">
+                <!-- 본문 -->
+                <table id="kind-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" class="all-check" id="all-check">
+                            </th>
+                            <th class="kind-table">품종 이름</th>
+                            <th class="kind-seller">규격 사용여부</th>
+                            <th class="kind-title">개수 사용여부</th>
+                            <th class="date">키로수 사용여부</th>
+                            <th class="date">가격 사용여부</th>
+                        </tr>
+                    </thead>
+                    <!-- 품종 리스트 시작 -->
+                    <tbody class="kind-content"></tbody>
+                    <!-- 품종 리스트 끝 -->
+                </table>
+                <div class="pages-wrapper">
+                    <div class="arrow-left">
+                        <img src="/image/admin/arrow-left.png">
+                    </div>
+                    <div class="page active">1</div>
+                    <div class="page">2</div>
+                    <div class="page">3</div>
+                    <div class="page">4</div>
+                    <div class="page">5</div>
+                    <div class="arrow-right">
+                        <img src="/image/admin/arrow-right.png">
+                    </div>
+                </div>
             </div>
-            <div class="page active">1</div>
-            <div class="page">2</div>
-            <div class="page">3</div>
-            <div class="page">4</div>
-            <div class="page">5</div>
-            <div class="arrow-right">
-                <img src="/image/admin/arrow-right.png">
-            </div>
-        </div>
-    </div>
-    </content>
+        </content>
         <!-- contents -->
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script th:inline="javascript">
+    let productRegistrations = [[${productRegistrationVOS}]];
+</script>
 <script src="/js/admin/admin.js"></script>
 <script src="/js/admin/kind.js"></script>
 <script src="/js/admin/checkbox.js"></script>

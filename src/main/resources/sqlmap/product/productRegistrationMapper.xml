@@ -32,10 +32,10 @@
         update tbl_product_registration
         set
             product_registration_name = #{productRegistrationName},
-            product_registration_specification = #{productRegistrationSpecification},
-            product_registration_weight = #{productRegistrationWeight},
-            product_registration_quantity = #{productRegistrationQuantity},
-            product_registration_price = #{productRegistrationPrice}
+            product_registration_specification = coalesce(#{productRegistrationSpecification}, 'N'),
+            product_registration_weight = coalesce(#{productRegistrationWeight}, 'N'),
+            product_registration_quantity = coalesce(#{productRegistrationQuantity}, 'N'),
+            product_registration_price = coalesce(#{productRegistrationPrice}, 'N')
         where product_registration_id = #{productRegistrationId}
     </update>
 
