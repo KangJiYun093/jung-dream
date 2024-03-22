@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문 완료 페이지</title>
-    <link rel="stylesheet" href="../../static/css/order/order-complete.css">
+    <link rel="stylesheet" href="/static/css/order/order-complete.css">
 </head>
 <body>
+<header id="header" th:replace="fragments/header :: header"></header>
     <div class="container">
-        <img src="../../static/image/KakaoTalk_20240122_174452638.jpg" alt="" class="complete-img">
+        <img src="/static/image/KakaoTalk_20240122_174452638.jpg" alt="" class="complete-img">
         <div class="comment">주문이 완료되었습니다. 주문 내역을 확인하세요!</div>
 
         <div class="btnArea">
@@ -16,5 +17,6 @@
             <button class="btnTypeB sizeXL">주문내역</button>
         </div>
     </div>
+<footer id="footer" th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

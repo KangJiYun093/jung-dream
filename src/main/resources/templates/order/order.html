@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문 페이지</title>
-    <link rel="stylesheet" href="../../static/css/order/order.css">
+    <link rel="stylesheet" href="/static/css/order/order.css">
 </head>
 <body>
+<header id="header" th:replace="fragments/header :: header"></header>
     <div class="container">
         <form name="orderForm" method="post" action="/templates/order/order-complete.html">
             <div class="order-title">
@@ -186,8 +187,9 @@
             </div>
         </div>
     </div>
+<footer id="footer" th:replace="fragments/footer :: footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="../../static/js/order/order.js"></script>
+<script src="/static/js/order/order.js"></script>
 </html>
