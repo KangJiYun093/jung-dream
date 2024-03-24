@@ -43,7 +43,11 @@ public class AdminController {
     }
 
     @GetMapping("goods")
-    public String goods() {
+    public String goods(Model model) {
+        List<ProductRegistrationVO> productRegistrationVOS = adminService.getAllProductRegistration();
+
+        model.addAttribute("productRegistrationVOS", productRegistrationVOS);
+
         return "admin/admin-goods";
     }
 

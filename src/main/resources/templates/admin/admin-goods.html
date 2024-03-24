@@ -20,78 +20,72 @@
         </div>
     </div>
     <!-- 모달 -->
-       <!-- 글쓰기 모달창 -->
+    <!-- 글쓰기 모달창 -->
     <div id="write-modal" class="write-modal">
         <div class="write-content">
         <!-- <p>공지사항을 작성해주세요</p> -->
-        <div class="modal-buttons">
-            <form method="post">
-                <div class="form-group kind-select">
-                    <label>품종</label> 
-                    <select>
-                        <option value="apple">사과</option>
-                        <option value="apple-juice">사과즙</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>제목</label> 
-                    <input class="form-control" name="title" required>
-                </div> 
-                <div class="form-group">
-				    <label>판매자</label> 
-                    <input class="form-control" name="name" required>
-			    </div>
-                <div class="form-group">
-                    <label>판매 단위</label> 
-                    <input class="form-control" name="sales-unit">
-                </div>
-                <div class="option-kind option-class">
-                    <div class="form-group">
-                        <label>규격</label> 
-             <!--            <select name="option">
-                                <option value="americano">1과</option>
-                                <option value="caffe latte">2과</option>
-                                <option value="espresso">3과</option>
-                                <option value="espresso">4과</option>
-                        </select> -->
-                        <input class="form-control" name="option">
+            <div class="modal-buttons">
+                <form method="post">
+                    <div class="form-group kind-select">
+                        <label>품종</label>
+                        <select id="product-kind">
+                            <div th:each="productRegistration : ${productRegistrationVOS}">
+                                <option th:value="${productRegistration.productRegistrationId}"  th:text="${productRegistration.productRegistrationName}"></option>
+                            </div>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>개수</label> 
-                        <input class="form-control" name="count">
+                        <label>제목</label>
+                        <input class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label>키로수</label> 
-                        <input class="form-control" name="weigh">
+                        <label>판매자</label>
+                        <input class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label>가격</label> 
-                        <input class="form-control" name="price">
+                        <label>판매 단위</label>
+                        <input class="form-control" name="sales-unit">
                     </div>
-                    <div class="plus-min-btn">
-                        <img class="plus-btn" src="/image/admin/plus.png">
-                        <img class="minus-btn" src="/image/admin/minus.png">
-                      </div>
+                    <div class="option-kind option-class" id="insert-option-kind">
+                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationSpecification == 'Y'}">
+                            <label>규격</label>
+                            <input type="text" class="form-control" name="option">
+                        </div>
+                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationWeight == 'Y'}">
+                            <label>키로수</label>
+                            <input type="text" class="form-control" name="weight">
+                        </div>
+                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationQuantity == 'Y'}">
+                            <label>개수</label>
+                            <input type="text" class="form-control" name="count">
+                        </div>
+                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationPrice == 'Y'}">
+                            <label>가격</label>
+                            <input type="text" class="form-control" name="price">
+                        </div>
+                        <div class="plus-min-btn">
+                            <img class="plus-btn" src="/image/admin/plus.png">
+                            <img class="minus-btn" src="/image/admin/minus.png">
+                        </div>
                     </div>
 
-
-            <div class="form-group">
-				<label>이미지 업로드</label>
-                    <input type="file" class="image-upload" accept="image/*" multiple>
-			</div>
-            <div class="thumbnail">
-                <img src="/image/admin/excel.png">
-                <img src="/image/admin/excel.png">
-                <img src="/image/admin/excel.png">
-                <img src="/image/admin/excel.png">
-                <img src="/image/admin/excel.png">
+                    <div class="form-group">
+                        <label>이미지 업로드</label>
+                            <input type="file" class="image-upload" accept="image/*" multiple>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="/image/admin/excel.png">
+                        <img src="/image/admin/excel.png">
+                        <img src="/image/admin/excel.png">
+                        <img src="/image/admin/excel.png">
+                        <img src="/image/admin/excel.png">
+                    </div>
+                    <div class="writes">
+                        <input class="notice-submit" type="submit" value="등록">
+                        <button class="cancel-btn">취소</button>
+                    </div>
+                </form>
             </div>
-            <div class="writes">
-                <input class="notice-submit" type="submit" value="등록">
-            <button class="cancel-btn">취소</button>
-            </div>
-        </div>
-            </form>
         </div>
     </div>
     <div id="detail-modal" class="detail-modal">
@@ -321,7 +315,10 @@
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script th:inline="javascript">
+    let productRegistrations = [[${productRegistrationVOS}]];
+</script>
 <script src="/js/admin/admin.js"></script>
-<script src="/js/admin/goods-admin.js"></script>
+<script src="/js/admin/goods.js"></script>
 <script src="/js/admin/checkbox.js"></script>
 </html>
