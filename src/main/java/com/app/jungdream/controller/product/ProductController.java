@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class ProductController {
 
-    private final ProductService productService;
+//    private final ProductService productService;
 
 
 
