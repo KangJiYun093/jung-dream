@@ -12,21 +12,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class OrderController {
 
+//    private final OrderService orderService;
+
     /*주문완료*/
-    @GetMapping("/order-complete")
+    @GetMapping("order-complete")
     public String completePage(){
         return "order/order-complete";
     }
 
     /*주문 페이지*/
-    @GetMapping("/order")
+    @GetMapping("order")
     public String order(){
         return "order/order";
     }
 
-    @GetMapping("/order-detail")
+
+//    /*주문하기*/
+//    @PostMapping ("order")
+//    public RedirectView order(Model model, OrderVO orderVo, RedirectAttributes redirectAttributes, @RequestParam(value="orderInfo") String orderInfo){
+//        redirectAttributes.addFlashAttribute("orderInfo", orderInfo);
+//        orderService.saveOrder(orderVo);
+//        log.info("saveorder");
+//        return new RedirectView("/order/order-complete");
+//    }
+
+    @GetMapping("order-detail")
     public String orderDetail(){
-        return "order/order-detail";
+        return "order/product-detail";
     }
 
 
