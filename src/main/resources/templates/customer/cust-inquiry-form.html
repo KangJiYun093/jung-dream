@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- 삭제 모달 -->
-    <div id="deleteCont-modal" class="deleteCont-modal" style="display: block;">
+    <div id="deleteCont-modal" class="deleteCont-modal">
         <div class="modal-content">
             <h2>작성 내용 삭제</h2>
         <p>현재 페이지를 나가시면</p>
@@ -82,21 +82,21 @@
                                 </th>
                                 <td>
                                     <p class="fileBox">
-                                        <input type="text" id="fileText" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image" name="image" onchange="$('#fileText').val($('#image').val())"> -->
+                                        <input type="text" id="file" readonly="readonly" style="width:590px">
+                                        <label for="file">파일찾기</label>
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
                                         </span>
                                     </p>
                                     <p class="fileBox">
                                         <input type="text" id="fileText2" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image2" name="image2" onchange="$('#fileText2').val($('#image2').val())"> -->
+                                        <label for="file">파일찾기</label>
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
                                         </span>
                                     </p>
                                     <p class="fileBox">
                                         <input type="text" id="fileText3" readonly="readonly" style="width:590px">
-                                        <span class="file btnTypeB">파일첨부
-                                            <!-- <input type="file" id="image3" name="image3" onchange="$('#fileText3').val($('#image3').val())"> -->
+                                        <label for="file">파일찾기</label>
+                                        <!-- <span class="file btnTypeB">파일첨부 -->
                                         </span>
                                     </p>
                                 </td>
@@ -113,8 +113,8 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/customer/cust-announce-detail.js"></script>
+<!-- <script src="../../static/js/customer/cust-announce-detail.js"></script>
 <script src="../../static/js/customer/cust-announce.js"></script>
 <script src="../../static/js/customer/cust-inquiry-form.js"></script>
-<script src="../../static/js/customer/cust-inquiry-list.js"></script>
+<script src="../../static/js/customer/cust-inquiry-list.js"></script> -->
 </html>
