@@ -42,46 +42,78 @@
                         <label>판매자</label>
                         <input class="form-control" name="name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="sales-unit-group">
                         <label>판매 단위</label>
-                        <input class="form-control" name="sales-unit">
+                        <input class="form-control" name="salesUnit">
                     </div>
-                    <div class="option-kind option-class" id="insert-option-kind">
-                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationSpecification == 'Y'}">
-                            <label>규격</label>
-                            <input type="text" class="form-control" name="option">
-                        </div>
-                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationWeight == 'Y'}">
-                            <label>키로수</label>
-                            <input type="text" class="form-control" name="weight">
-                        </div>
-                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationQuantity == 'Y'}">
-                            <label>개수</label>
-                            <input type="text" class="form-control" name="count">
-                        </div>
-                        <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationPrice == 'Y'}">
-                            <label>가격</label>
-                            <input type="text" class="form-control" name="price">
-                        </div>
-                        <div class="plus-min-btn">
-                            <img class="plus-btn" src="/image/admin/plus.png">
-                            <img class="minus-btn" src="/image/admin/minus.png">
+                    <div class="option-group">
+                        <div class="option-kind option-class" id="insert-option-kind">
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationSpecification == 'Y'}">
+                                <label>규격</label>
+                                <input type="text" class="form-control" name="option">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationWeight == 'Y'}">
+                                <label>키로수</label>
+                                <input type="text" class="form-control" name="weight">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationQuantity == 'Y'}">
+                                <label>개수</label>
+                                <input type="text" class="form-control" name="count">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationPrice == 'Y'}">
+                                <label>가격</label>
+                                <input type="text" class="form-control" name="price">
+                            </div>
+                            <div class="plus-min-btn">
+                                <img class="plus-btn" src="/image/admin/plus.png">
+                                <img class="minus-btn" src="/image/admin/minus.png">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>이미지 업로드</label>
-                            <input type="file" class="image-upload" accept="image/*" multiple>
-                    </div>
+
+<!--                    <div class="form-group">-->
+<!--                        <label>이미지 업로드</label>-->
+<!--                        <input type="file" class="image-upload" accept="image/*">-->
+<!--                    </div>-->
                     <div class="thumbnail">
-                        <img src="/image/admin/excel.png">
-                        <img src="/image/admin/excel.png">
-                        <img src="/image/admin/excel.png">
-                        <img src="/image/admin/excel.png">
-                        <img src="/image/admin/excel.png">
+                        <label for="first">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="first" style="display: none">
+                        </label>
+                        <label for="second">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="second" style="display: none">
+                        </label>
+                        <label for="third">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="third" style="display: none">
+                        </label>
+                        <label for="fourth">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="fourth" style="display: none">
+                        </label>
+                        <label for="fifth">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="fifth" style="display: none">
+                        </label>
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
                     </div>
                     <div class="writes">
-                        <input class="notice-submit" type="submit" value="등록">
+                        <input class="notice-submit" id="insert-button" type="button" value="등록">
                         <button class="cancel-btn">취소</button>
                     </div>
                 </form>
