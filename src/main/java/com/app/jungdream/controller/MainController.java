@@ -14,22 +14,22 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class MainController {
-
-        //    헤더쪽 장바구니
-        @GetMapping("cart")
-        public String moveCart(){
-                List<CartVO> cartVOS
-
-
-                return "/cart/cart";}
-
-        //    헤더쪽 문의하기
-        @GetMapping("inquiry")
-        public String moveInquiry(){ return "/customer/cust-inquiry-list";}
-
-        //     헤더쪽 공지사항
-        @GetMapping("notice")
-        public String moveNotice(){ return "/customer/cust-notice";}
+//
+//        //    헤더쪽 장바구니
+//        @GetMapping("cart")
+//        public String moveCart(){
+//                List<CartVO> cartVOS
+//
+//
+//                return "/cart/cart";}
+//
+//        //    헤더쪽 문의하기
+//        @GetMapping("inquiry")
+//        public String moveInquiry(){ return "/customer/cust-inquiry-list";}
+//
+//        //     헤더쪽 공지사항
+//        @GetMapping("notice")
+//        public String moveNotice(){ return "/customer/cust-notice";}
 
 
 
