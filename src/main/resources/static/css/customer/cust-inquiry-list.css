@@ -204,12 +204,12 @@ tbody {
     /* border-top: 1px solid #d9d9d9; */
     border-left: 1px solid #d9d9d9;
     line-height: 18px;
-    /* text-align: center; */
+    text-align: center;
 }
 
 .bbsList.typeD tbody th, .bbsList.typeD tbody td {
     border-left-width: 0;
-    border-top-style: dotted;
+    /* border-top-style: dotted; */
 }
 
 .bbsList .counselCont th, .bbsList .counselCont td {
@@ -219,6 +219,7 @@ tbody {
 .bbsList .counselCont td {
     /* padding: 0 15px 20px 140px; */
     text-align: left;
+    border-bottom: 1px solid #828282;
 }
 
 .qa {
