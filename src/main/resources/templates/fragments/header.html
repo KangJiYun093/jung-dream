@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../static/css/fragments/header.css">
 </head>
 <body>
-  <div id="header2" class="shopping">
+  <div id="header2" class="shopping" th:fragment="header">
       <p class="logo">
         <a href="">
           <img src="https://www.sanghafarm.co.kr/images/layout/logo3.png" alt="상하농원">
@@ -18,19 +18,19 @@
         <div class="mainNav shopping">
           <ul>
             <li>
-              <a href="">상하브랜드관</a>
+              <a href="">상하브랜드관</a>   <!--헤더 상단 메뉴 3가지만 ? -->
             </li>
             <li>
               <a href="">신상품</a> 
             </li>
             <li>
-              <a href="">베스트</a>
+              <a href="/cart/cart">장바구니</a>
             </li>
             <li>
-              <a href="">알뜰상품</a>
+              <a href="/customer/cust-inquiry-list">문의하기</a>
             </li>
             <li>
-                <a href="">상파하머스</a>
+                <a href="/customer/cust-notice">고객센터</a>
             </li>
           </ul>
       </div>  

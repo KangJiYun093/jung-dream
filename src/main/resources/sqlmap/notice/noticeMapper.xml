@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.jungdream.mapper.notice.NoticeMapper">
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <select id="selectAllNotice">
+        select notice_id, notice_title, notice_content, notice_create_date, notice_update_date
+        from tbl_notice
+    </select>
+
+    <select id="selectNotice">
+        select notice_id, notice_title, notice_content, notice_create_date, notice_update_date
+        from tbl_notice
+        where notice_id = #{noticeId}
+    </select>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <insert id="insertNotice">
+        insert into tbl_notice
+            (notice_title, notice_content, notice_create_date, notice_update_date)
+        values(#{noticeTitle}, #{noticeContent}, current_timestamp, current_timestamp)
+    </insert>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <update id="updateNotice">
+        update tbl_notice
+        set notice_title = #{noticeTitle},
+            notice_content = #{noticeContent},
+            notice_update_date = current_timestamp
+        where notice_id = #{noticeId}
+    </update>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::DELETE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <delete id="deleteNotice">
+        delete from tbl_notice where notice_id = #{noticeId}
+    </delete>
+
+</mapper>

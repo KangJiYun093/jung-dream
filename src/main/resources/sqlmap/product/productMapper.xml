@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.jungdream.mapper.product.ProductMapper">
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+    <!-- 상품 조회-->
+    <select id="selectProduct" resultType="productDTO">
+        select product_id, product_status, product_title, prodct_seller, product_registration_id,
+               product_option_specification, product_option_weight, product_option_quantity, product_option_price
+        from tbl_product where product_id = #{productId} </select>
+
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::DELETE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+</mapper>

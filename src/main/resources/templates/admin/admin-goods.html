@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 페이지</title>
-    <link rel="stylesheet" href="../../static/css/admin/admin.css">
-    <link rel="stylesheet" href="../../static/css/admin/admin-goods.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="stylesheet" href="/css/admin/admin-goods.css">
 </head>
 <body>
      <!-- 모달 -->
@@ -20,78 +20,104 @@
         </div>
     </div>
     <!-- 모달 -->
-       <!-- 글쓰기 모달창 -->
+    <!-- 글쓰기 모달창 -->
     <div id="write-modal" class="write-modal">
         <div class="write-content">
         <!-- <p>공지사항을 작성해주세요</p> -->
-        <div class="modal-buttons">
-            <form method="post">
-                <div class="form-group kind-select">
-                    <label>품종</label> 
-                    <select>
-                        <option value="apple">사과</option>
-                        <option value="apple-juice">사과즙</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>제목</label> 
-                    <input class="form-control" name="title" required>
-                </div> 
-                <div class="form-group">
-				    <label>판매자</label> 
-                    <input class="form-control" name="name" required>
-			    </div>
-                <div class="form-group">
-                    <label>판매 단위</label> 
-                    <input class="form-control" name="sales-unit">
-                </div>
-                <div class="option-kind option-class">
-                    <div class="form-group">
-                        <label>규격</label> 
-             <!--            <select name="option">
-                                <option value="americano">1과</option>
-                                <option value="caffe latte">2과</option>
-                                <option value="espresso">3과</option>
-                                <option value="espresso">4과</option>
-                        </select> -->
-                        <input class="form-control" name="option">
+            <div class="modal-buttons">
+                <form method="post">
+                    <div class="form-group kind-select">
+                        <label>품종</label>
+                        <select id="product-kind">
+                            <div th:each="productRegistration : ${productRegistrationVOS}">
+                                <option th:value="${productRegistration.productRegistrationId}"  th:text="${productRegistration.productRegistrationName}"></option>
+                            </div>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>개수</label> 
-                        <input class="form-control" name="count">
+                        <label>제목</label>
+                        <input class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label>키로수</label> 
-                        <input class="form-control" name="weigh">
+                        <label>판매자</label>
+                        <input class="form-control" name="name" required>
                     </div>
-                    <div class="form-group">
-                        <label>가격</label> 
-                        <input class="form-control" name="price">
+                    <div class="form-group" id="sales-unit-group">
+                        <label>판매 단위</label>
+                        <input class="form-control" name="salesUnit">
                     </div>
-                    <div class="plus-min-btn">
-                        <img class="plus-btn" src="../../static/image/admin/plus.png">
-                        <img class="minus-btn" src="../../static/image/admin/minus.png">
-                      </div>
+                    <div class="option-group">
+                        <div class="option-kind option-class" id="insert-option-kind">
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationSpecification == 'Y'}">
+                                <label>규격</label>
+                                <input type="text" class="form-control" name="option">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationWeight == 'Y'}">
+                                <label>키로수</label>
+                                <input type="text" class="form-control" name="weight">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationQuantity == 'Y'}">
+                                <label>개수</label>
+                                <input type="text" class="form-control" name="count">
+                            </div>
+                            <div class="form-group" th:if="${productRegistrationVOS.get(0).productRegistrationPrice == 'Y'}">
+                                <label>가격</label>
+                                <input type="text" class="form-control" name="price">
+                            </div>
+                            <div class="plus-min-btn">
+                                <img class="plus-btn" src="/image/admin/plus.png">
+                                <img class="minus-btn" src="/image/admin/minus.png">
+                            </div>
+                        </div>
                     </div>
 
 
-            <div class="form-group">
-				<label>이미지 업로드</label>
-                    <input type="file" class="image-upload" accept="image/*" multiple>
-			</div>
-            <div class="thumbnail">
-                <img src="../../static/image/admin/excel.png">
-                <img src="../../static/image/admin/excel.png">
-                <img src="../../static/image/admin/excel.png">
-                <img src="../../static/image/admin/excel.png">
-                <img src="../../static/image/admin/excel.png">
+<!--                    <div class="form-group">-->
+<!--                        <label>이미지 업로드</label>-->
+<!--                        <input type="file" class="image-upload" accept="image/*">-->
+<!--                    </div>-->
+                    <div class="thumbnail">
+                        <label for="first">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="first" style="display: none">
+                        </label>
+                        <label for="second">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="second" style="display: none">
+                        </label>
+                        <label for="third">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="third" style="display: none">
+                        </label>
+                        <label for="fourth">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="fourth" style="display: none">
+                        </label>
+                        <label for="fifth">
+                            <span class="image-div">
+                                <img src="/image/admin/excel.png">
+                            </span>
+                            <input type="file" class="image-upload" accept="image/*" id="fifth" style="display: none">
+                        </label>
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
+<!--                        <img src="/image/admin/excel.png">-->
+                    </div>
+                    <div class="writes">
+                        <input class="notice-submit" id="insert-button" type="button" value="등록">
+                        <button class="cancel-btn">취소</button>
+                    </div>
+                </form>
             </div>
-            <div class="writes">
-                <input class="notice-submit" type="submit" value="등록">
-            <button class="cancel-btn">취소</button>
-            </div>
-        </div>
-            </form>
         </div>
     </div>
     <div id="detail-modal" class="detail-modal">
@@ -100,56 +126,58 @@
         <div class="detail-wrapper">
             <div class="form-group">
                 <label>품종</label> 
-                <input class="form-control" name="kind-detail" readonly>
+                <input class="form-control" name="kind-detail">
 			</div>
             <div class="form-group">
                 <label>제목</label> 
-                <input class="form-control" name="title-detail" readonly>
+                <input class="form-control" name="title-detail">
 			</div>
             <div class="form-group">
                 <label>판매자</label> 
-                <input class="form-control" name="seller-detail" readonly>
+                <input class="form-control" name="seller-detail">
 			</div>
             <div class="form-group">
                 <label>판매단위</label> 
-                <input class="form-control" name="saels-unit-detail" readonly>
+                <input class="form-control" name="saels-unit-detail">
             </div>
             <div class="form-group">
                 <label>중량/용량</label> 
-                <input class="form-control" name="weigh-detail" readonly>
+                <input class="form-control" name="weigh-detail">
             </div>
             <div class="option-kind">
                 <div class="form-group">
                     <label>규격</label> 
-                    <input class="form-control" name="option-detail" readonly>
+                    <input class="form-control" name="option-detail">
                 </div>
                 <div class="form-group">
                     <label>개수</label> 
-                    <input class="form-control" name="count-detail" readonly>
+                    <input class="form-control" name="count-detail">
                 </div>
                 <div class="form-group">
                     <label>키로수</label> 
-                    <input class="form-control" name="weigh-detail" readonly>
+                    <input class="form-control" name="weigh-detail">
                 </div>
                 <div class="form-group">
                     <label>가격</label> 
-                    <input class="form-control" name="price-detail" readonly>
+                    <input class="form-control" name="price-detail">
                 </div>
             </div>
             <div class="form-group">
                 <div class="detail-images">
                 <label>첨부 파일</label>
                 <div></div>
-                <img src="../../static/image/admin/search.png">
-                <img src="../../static/image/admin/search.png">
-                <img src="../../static/image/admin/search.png">
-                <img src="../../static/image/admin/search.png">
-                <img src="../../static/image/admin/search.png">
+                <img src="/image/admin/search.png">
+                <img src="/image/admin/search.png">
+                <img src="/image/admin/search.png">
+                <img src="/image/admin/search.png">
+                <img src="/image/admin/search.png">
             </div>
             </div>
             <div class="modal-buttons">
-                <button class="confirm-btn">확인</button>
-                <!-- <button class="cancel-btn">취소</button> -->
+                <form method="post" class="goods-buttons">
+                <button class="confirm-btn">수정</button>
+                </form>
+                <button class="cancel-btn">취소</button>
             </div>
             </div>
         </div>
@@ -200,7 +228,7 @@
                     <form action="" class="search__searchbox__form">
                         <input id="searchbox" type="text" placeholder="원하시는 키워드로 검색해보세요" maxlength="40"/>
                         <button type="button" class="search__searchbox__button">
-                            <img src="../../static/image/admin/search.png"/>
+                            <img src="/image/admin/search.png"/>
                         </button>
                     </form>
                 </div>
@@ -218,72 +246,81 @@
             <!-- 상품 목록 창 -->        
                 <ul class="goods-list">
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
                             <p class="upload-date">날짜: 2024-01-25</p>
                     </li>
                     <li class="goods">
+                        <input type="checkbox" name="check">
                             <div class="thumb">
-                                <img src="../../static/image/admin/search.png">
+                                <img src="/image/admin/search.png">
                             </div>
                             <p class="goods-name">이름: 당도 높은 사과</p>
                             <p class="goods-price">가격: 300000만원</p>
@@ -292,13 +329,17 @@
                 </ul>
 
                 <div class="pages-wrapper">
-                    <div class="arrow-left"></div>
+                    <div class="arrow-left">
+                        <img src="/image/admin/arrow-left.png">
+                    </div>
                     <div class="page active">1</div>
                     <div class="page">2</div>
                     <div class="page">3</div>
                     <div class="page">4</div>
                     <div class="page">5</div>
-                    <div class="arrow-right"></div>
+                    <div class="arrow-right">
+                        <img src="/image/admin/arrow-right.png">
+                    </div>
                 </div>
             </div>
         </content>
@@ -306,7 +347,10 @@
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/admin/admin.js"></script>
-<script src="../../static/js/admin/goods-admin.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script th:inline="javascript">
+    let productRegistrations = [[${productRegistrationVOS}]];
+</script>
+<script src="/js/admin/admin.js"></script>
+<script src="/js/admin/goods.js"></script>
+<script src="/js/admin/checkbox.js"></script>
 </html>

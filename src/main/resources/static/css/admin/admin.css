@@ -501,7 +501,7 @@ tbody{
 
 /* 테이블 tr 스타일 */
 .inquiry-content{
-    padding-right: 450px
+    padding-right: 329px
 }
 
 .notice-title{
@@ -740,4 +740,27 @@ tbody{
 
 .plus-btn, .minus-btn {
     cursor: pointer;
+}
+
+
+th{
+  pointer-events:none;
+}
+
+.all-check, .goods-list{
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.goods-buttons{
+  width: 0%;
+}
+
+.arrow-left img, .arrow-right img{
+  width: 25px;
+  cursor: pointer;
+}
+
+tr, td, .page{
+  cursor: pointer;
 }

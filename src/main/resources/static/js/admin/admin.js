@@ -68,23 +68,56 @@ $(document).ready(function() {
     })
 })
 
+
 /* 상세 항목 모달 */
 $(document).ready(function() {
-    $('tr').click(function(){
+    $('td').click(function(){
         console.log("상세 항목 클릭");
-        $('#detail-modal').show();
-        console.log("모달 열기");
-    })
-})
+        // 현재 클릭된 행 안에 있는 체크박스인지 확인합니다.
+        if($(this).find("input[type=checkbox]").length > 0) {
+            console.log("체크박스 타입");
+            $('#detail-modal').hide(); // 체크박스인 경우 모달 열기
+        } else {
+            console.log("체크박스타입이 아님");
+            $('#detail-modal').show(); // 체크박스가 아닌 경우 모달 닫기
+        }
+    });
+});
 
 
+// $(document).ready(function() {
+//     $('li').click(function(){
+//         console.log("상세 항목 클릭");
+//         $('#detail-modal').show();
+//         console.log("모달 열기");
+//     })
+// })
+
+// $(document).ready(function() {
+//     $('input[type=checkbox]').click(function(){
+//         console.log("체크박스 선택하면");
+//         $('#detail-modal').hide();
+//         console.log("모달 열리지 않음");
+//     })
+// })
+
+
+/* 상세 항목 모달 */
 $(document).ready(function() {
-    $('li').click(function(){
-        console.log("상세 항목 클릭");
-        $('#detail-modal').show();
-        console.log("모달 열기");
-    })
-})
+    $('.goods').click(function(event){
+        console.log("상품 클릭");
+        // 클릭된 요소가 체크박스를 포함하고 있는지 확인합니다.
+        if($(event.target).is('input[type=checkbox]')) {
+            console.log("체크박스입니다.");
+            $('#detail-modal').hide(); // 체크박스가 있는 경우 모달 막기
+        } else {
+            console.log("체크박스가 아닌 항목입니다.");
+            $('#detail-modal').show(); // 그 외의 경우 모달 열기
+        }
+    });
+});
+
+
 
 
 /* 이미지 팝업 모달 */
@@ -99,36 +132,6 @@ $(document).ready(function() {
 $(".image-show-modal button").click(function(){
     $(".image-show-modal").hide();
 });
-
-
-// $(document).ready(function() {
-//     $('.plus-btn').click(function(){
-//         console.log("플러스 버튼 클릭");
-//         $('.plus-btn').parent().parent().prev().append(`<br><div class="option-kind">
-//         <div class="form-group">
-//             <label>규격</label> 
-//             <input class="form-control" name="option">
-//         </div>
-//         <div class="form-group">
-//             <label>개수</label> 
-//             <input class="form-control" name="count">
-//         </div>
-//         <div class="form-group">
-//             <label>키로수</label> 
-//             <input class="form-control" name="weigh">
-//         </div>
-//         <div class="form-group">
-//             <label>가격</label> 
-//             <input class="form-control" name="price">
-//         </div>
-//         <div class="plus-min-btn">
-//             <img class="plus-btn" src="../../static/image/admin/plus.png">
-//             <img class="minus-btn" src="../../static/image/admin/minus.png">
-//           </div>
-//         </div>`);
-//         console.log("플러스 추가");
-//     })
-// })
 
 
 $(document).ready(function() {

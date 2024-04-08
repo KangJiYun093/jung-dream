@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.jungdream.mapper.order.OrderMapper">
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+    <!-- 상품 주문 -->
+    <insert id="insertOrder">
+        insert into tbl_order (order_customer_name, order_customer_phone, order_recipient_name,
+                               order_recipient_phone, order_status, order_date, order_delivery_date, order_address,
+                               order_quantity, order_total_price, product_id)
+        VALUES (#{orderCustomerName}, #{orderCustomerPhone}, #{orderRecipientName},
+                #{orderRecipientPhone}, #{orderStatus}, current_timestamp, #{orderDeliveryDate}, #{orderAddress},
+                #{orderQuantity}, #{orderTotalPrice}, #{productId})
+    </insert>
+
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::DELETE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+
+</mapper>

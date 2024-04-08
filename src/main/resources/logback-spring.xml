@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
-    <property name="LOG_PATH" value="/work_outside_web/logs" />
-    <property name="LOG_FILE_NAME" value="work_boot_st" />
+    <!-- 윈도우 -->
+    <property name="LOG_PATH" value="C:/www/log" />
+    <!-- 리눅스 -->
+    <!--    <property name="LOG_PATH" value="/data/cnet/www/log" /> -->
+    <property name="LOG_FILE_NAME" value="crec_boot_st" />
     <property name="ERR_LOG_FILE_NAME" value="err_log_boot" />
     <!-- 프로필별 로그 설정 -->
     <springProfile name="local">
         <!-- 쿼리 로그를 여러 줄로 표현 -->
         <property name="LOG_PATTERN" value="%-5level %d{yy-MM-dd HH:mm:ss}[%thread] [%logger{0}:%line] - %msg%n" />
     </springProfile>
+    <springProfile name="dev">
+        <!-- 쿼리 로그를 여러 줄로 표현 -->
+        <property name="LOG_PATTERN" value="%-5level %d{yy-MM-dd HH:mm:ss}[%thread] [%logger{0}:%line] - %msg%n" />
+    </springProfile>
+    <springProfile name="prod">
+        <!-- 쿼리 로그를 한줄로 표현 -->
+        <property name="LOG_PATTERN" value="%-5level %d{yy-MM-dd HH:mm:ss}[%thread] [%logger{0}:%line] - %replace(%msg){'[\r\n]+', ' '}%n%ex{full}" />
+    </springProfile>
+
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -27,9 +39,25 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PATH}/${LOG_FILE_NAME}.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <springProfile name="local">
+                    <maxFileSize>5MB</maxFileSize>
+                </springProfile>
+                <springProfile name="dev">
+                    <maxFileSize>100MB</maxFileSize>
+                </springProfile>
+                <springProfile name="prod">
+                    <maxFileSize>100MB</maxFileSize>
+                </springProfile>
             </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>30</maxHistory>
+            <springProfile name="local">
+                <maxHistory>5</maxHistory>
+            </springProfile>
+            <springProfile name="dev">
+                <maxHistory>60</maxHistory>
+            </springProfile>
+            <springProfile name="prod">
+                <maxHistory>60</maxHistory>
+            </springProfile>
         </rollingPolicy>
     </appender>
     <!-- 에러의 경우 파일에 로그 처리 -->
@@ -50,9 +78,25 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PATH}/${ERR_LOG_FILE_NAME}.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <springProfile name="local">
+                    <maxFileSize>5MB</maxFileSize>
+                </springProfile>
+                <springProfile name="dev">
+                    <maxFileSize>100MB</maxFileSize>
+                </springProfile>
+                <springProfile name="prod">
+                    <maxFileSize>100MB</maxFileSize>
+                </springProfile>
             </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>30</maxHistory>
+            <springProfile name="local">
+                <maxHistory>5</maxHistory>
+            </springProfile>
+            <springProfile name="dev">
+                <maxHistory>60</maxHistory>
+            </springProfile>
+            <springProfile name="prod">
+                <maxHistory>60</maxHistory>
+            </springProfile>
         </rollingPolicy>
     </appender>
 
@@ -65,14 +109,50 @@
             <appender-ref ref="ERROR" />
         </root>
     </springProfile>
+    <springProfile name="dev">
+        <!-- root 레벨 설정 -->
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+            <appender-ref ref="ERROR" />
+        </root>
+    </springProfile>
+    <springProfile name="prod">
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+            <appender-ref ref="ERROR" />
+        </root>
+        <logger name="PRODLOG" level="info" additivity="false">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+            <appender-ref ref="ERROR" />
+        </logger>
+    </springProfile>
 
     <!-- 프로필별 쿼리 로그 설정 -->
     <springProfile name="local">
         <logger name="jdbc.sqlonly" level="off"/>
-        <logger name="jdbc.sqltiming" level="debug"/>
+        <logger name="jdbc.sqltiming" level="info"/>   <!-- 쿼리 수행 시간 -->
         <logger name="jdbc.audit" level="off"/>
         <logger name="jdbc.resultset" level="off"/>
-        <logger name="jdbc.resultsettable" level="off"/>
+        <logger name="jdbc.resultsettable" level="debug"/>
+        <logger name="jdbc.connection" level="off"/>
+    </springProfile>
+    <springProfile name="dev">
+        <logger name="jdbc.sqlonly" level="off"/>
+        <logger name="jdbc.sqltiming" level="info"/>
+        <logger name="jdbc.audit" level="off"/>
+        <logger name="jdbc.resultset" level="off"/>
+        <logger name="jdbc.resultsettable" level="off"/>   <!-- off -->
+        <logger name="jdbc.connection" level="off"/>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="jdbc.sqlonly" level="off"/>
+        <logger name="jdbc.sqltiming" level="info"/>
+        <logger name="jdbc.audit" level="off"/>
+        <logger name="jdbc.resultset" level="off"/>
+        <logger name="jdbc.resultsettable" level="off"/>   <!-- off -->
         <logger name="jdbc.connection" level="off"/>
     </springProfile>
 </configuration>

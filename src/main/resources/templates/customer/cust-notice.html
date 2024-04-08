@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 페이지</title>
-    <link rel="stylesheet" href="../../static/css/customer/cust-announce.css">
+    <link rel="stylesheet" href="/css/fragments/header.css">
+    <link rel="stylesheet" href="/css/fragments/footer.css">
+    <link rel="stylesheet" href="/css/customer/cust-notice.css">
 </head>
 <body>
     <div id="wrapper">
+        <header id="header" th:replace="fragments/header :: header"></header>
         <p class="original"></p>
         <div id="main-container">
             <div id="snb" class="customerSnb" style="min-height: 857px;">
@@ -128,11 +131,12 @@
                 <ul class="paging"></ul>
             </div>
         </div>
+        <footer id="footer" th:replace="fragments/footer :: footer"></footer>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/customer/cust-announce-detail.js"></script>
-<script src="../../static/js/customer/cust-announce.js"></script>
-<script src="../../static/js/customer/cust-inquiry-form.js"></script>
-<script src="../../static/js/customer/cust-inquiry-list.js"></script>
+<script src="/js/customer/cust-notice-detail.js"></script>
+<script src="/js/customer/cust-notice.js"></script>
+<script src="/js/customer/cust-inquiry-form.js"></script>
+<script src="/js/customer/cust-inquiry-list.js"></script>
 </html>

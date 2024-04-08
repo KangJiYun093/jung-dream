@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.jungdream.mapper.product.ProductRegistrationMapper">
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <select id="selectAllProductRegistration" resultType="productRegistrationVO">
+        select
+            product_registration_id, product_registration_name, product_registration_specification,
+            product_registration_weight, product_registration_quantity, product_registration_price
+        from tbl_product_registration
+    </select>
+
+    <select id="selectProductRegistration" resultType="productRegistrationVO">
+        select
+            product_registration_id, product_registration_name, product_registration_specification,
+            product_registration_weight, product_registration_quantity, product_registration_price
+        from tbl_product_registration
+        where product_registration_id = #{productRegistrationId}
+    </select>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <insert id="insertProductRegistration">
+        insert into tbl_product_registration
+        (product_registration_name, product_registration_specification, product_registration_weight,
+         product_registration_quantity, product_registration_price)
+        values(#{productRegistrationName}, coalesce(#{productRegistrationSpecification}, 'N'), coalesce(#{productRegistrationWeight}, 'N'),
+               coalesce(#{productRegistrationQuantity}, 'N'), coalesce(#{productRegistrationPrice}, 'N'))
+    </insert>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <update id="updateProductRegistration">
+        update tbl_product_registration
+        set
+            product_registration_name = #{productRegistrationName},
+            product_registration_specification = coalesce(#{productRegistrationSpecification}, 'N'),
+            product_registration_weight = coalesce(#{productRegistrationWeight}, 'N'),
+            product_registration_quantity = coalesce(#{productRegistrationQuantity}, 'N'),
+            product_registration_price = coalesce(#{productRegistrationPrice}, 'N')
+        where product_registration_id = #{productRegistrationId}
+    </update>
+
+    <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::DELETE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <delete id="deleteProductRegistration">
+        delete from tbl_product_registration where product_registration_id = #{productRegistrationId}
+    </delete>
+
+</mapper>
