@@ -119,6 +119,8 @@ $(document).ready(function() {
             contentType:false,
             processData:false,
             success: function(result) {
+                $input.next().val(result.uuids[0]);
+                $input.next().next().val(result.paths[0]);
                 $input.parent().find('.image-div').empty();
                 $input.parent().find('.image-div').append($(`<img src="/files/display?fileName=${result.paths[0]}">`));
             }
@@ -141,12 +143,17 @@ $(document).ready(function() {
             return;
         }
 
+        let productOptionVOS = [];
         if($('input[name=option]').length > 0) {
             for (let i = 0; i < $('input[name=option]').length; i++) {
                 if(!$('input[name=option]').eq(i).val()) {
                     alert('규격을 입력하세요');
                     return;
                 }
+                if (!productOptionVOS[i]) {
+                    productOptionVOS[i] = {};
+                }
+                productOptionVOS[i]["productOptionSpecification"] = $('input[name=option]').eq(i).val();
             }
         }
 
@@ -156,6 +163,10 @@ $(document).ready(function() {
                     alert('키로수를 입력하세요');
                     return;
                 }
+                if (!productOptionVOS[i]) {
+                    productOptionVOS[i] = {};
+                }
+                productOptionVOS[i]["productOptionWeight"] = $('input[name=weight]').eq(i).val();
             }
         }
 
@@ -165,6 +176,10 @@ $(document).ready(function() {
                     alert('개수를 입력하세요');
                     return;
                 }
+                if (!productOptionVOS[i]) {
+                    productOptionVOS[i] = {};
+                }
+                productOptionVOS[i]["productOptionQuantity"] = $('input[name=count]').eq(i).val();
             }
         }
 
@@ -174,23 +189,46 @@ $(document).ready(function() {
                     alert('가격을 입력하세요');
                     return;
                 }
+                if (!productOptionVOS[i]) {
+                    productOptionVOS[i] = {};
+                }
+                productOptionVOS[i]["productOptionPrice"] = $('input[name=price]').eq(i).val();
             }
         }
 
+        let fileNames = [];
         for (let i = 0; i < $('.image-upload').length; i++) {
             if(!$('.image-upload').eq(i).val()) {
                 alert('사진 5개를 모두 넣어주세요');
                 return;
             }
+            fileNames[i] = $('.image-upload').eq(i).val().split('\\')[2];
         }
 
-        $.ajax({
-            url: "/admins/",
-            type: "post",
-            data: { productTitle : $('input[name=title]').val(), productSeller : $('input[name=name]').val(),
-                productRegistrationId : $('select[name=location] option:selected').val() },
-            success: function() {
+        let productVO =
+        {
+            productSalesUnit : $('input[name=salesUnit]').val(),
+            productTitle : $('input[name=title]').val(),
+            productSeller : $('input[name=name]').val(),
+            productRegistrationId : $('#product-kind option:selected').val()
+        };
 
+        let productFileVOS = [];
+        $('.uuid').each((i, e) => {
+            productFileVOS[i] = { uuid : $('.uuid').eq(i).val(), filePath : $('.filePath').eq(i).val(), fileName : fileNames[i] }
+        });
+
+        $.ajax({
+            url: "/admins/product/save",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify({
+                productVO: productVO,
+                productOptionVOS: productOptionVOS,
+                productFileVOS: productFileVOS
+            }),
+            success: function() {
+                document.location.reload(true);
             }
         });
     });

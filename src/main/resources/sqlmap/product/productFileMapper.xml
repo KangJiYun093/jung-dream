@@ -6,7 +6,11 @@
 
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
-
+    <insert id="insertProductFile">
+        insert into tbl_product_file
+            (product_uuid, product_file_path, product_file_name, product_id)
+        values(#{uuid}, #{filePath}, #{fileName}, #{productId})
+    </insert>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
 
