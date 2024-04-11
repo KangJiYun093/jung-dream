@@ -8,5 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ProductMapper {
     public ProductDTO selectProduct(Long productId);
 
+    public Long selectProductId();
+
+    public void insertProduct(ProductVO productVO);
 
 }

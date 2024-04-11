@@ -8,11 +8,20 @@
     <select id="selectProduct" resultType="productDTO">
         select product_id, product_status, product_title, prodct_seller, product_registration_id,
                product_option_specification, product_option_weight, product_option_quantity, product_option_price
-        from tbl_product where product_id = #{productId} </select>
+        from tbl_product where product_id = #{productId}
+    </select>
 
-
+    <!-- 현재 상품의 id 조회 -->
+    <select id="selectProductId">
+        select product_id from tbl_product order by product_id desc limit 1
+    </select>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+    <insert id="insertProduct">
+        insert into tbl_product
+        (product_sales_unit, product_title, product_seller, product_registration_id)
+        values(#{productSalesUnit}, #{productTitle}, #{productSeller}, #{productRegistrationId})
+    </insert>
 
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->

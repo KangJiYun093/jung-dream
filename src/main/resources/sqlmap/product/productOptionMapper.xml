@@ -6,7 +6,11 @@
 
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
-
+    <insert id="insertProductOption">
+        insert into tbl_product_option
+        (product_option_specification, product_option_weight, product_option_quantity, product_option_price, product_id)
+        values(#{productOptionSpecification}, #{productOptionWeight}, #{productOptionQuantity}, #{productOptionPrice}, #{productId})
+    </insert>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
 
