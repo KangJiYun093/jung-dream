@@ -17,4 +17,6 @@ public class ProductDTO {
     private String productOptionWeight;
     private String productOptionQuantity;
     private Integer productOptionPrice;
+
+
 }
