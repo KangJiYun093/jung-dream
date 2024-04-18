@@ -1,6 +1,22 @@
 /* 이미지 팝업 모달 */
 $(document).ready(function() {
 
+    products.forEach(product => {
+        let text = `
+            <li class="goods">
+                <input type="checkbox" name="check">
+                <div class="thumb">
+                    <img src="/files/display?fileName=${product.productFilePath}">
+                </div>
+                <p class="goods-name">${product.productTitle}</p>
+                <p class="goods-registration-name">${product.productRegistrationName}</p>
+                <p class="goods-sales-unit">${product.productSalesUnit}</p>
+            </li>
+        `;
+
+        $('.goods-list').append(text);
+    });
+
     let text = `<div class="option-kind option-class" id="insert-option-kind">`;
 
     if (productRegistrations[0].productRegistrationSpecification == 'Y') {
