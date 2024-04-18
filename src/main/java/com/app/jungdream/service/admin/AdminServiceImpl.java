@@ -4,6 +4,7 @@ import com.app.jungdream.domain.dao.ProductDAO;
 import com.app.jungdream.domain.dao.ProductFileDAO;
 import com.app.jungdream.domain.dao.ProductOptionDAO;
 import com.app.jungdream.domain.dao.ProductRegistrationDAO;
+import com.app.jungdream.domain.dto.ProductDTO;
 import com.app.jungdream.domain.vo.ProductFileVO;
 import com.app.jungdream.domain.vo.ProductOptionVO;
 import com.app.jungdream.domain.vo.ProductRegistrationVO;
@@ -23,6 +24,11 @@ public class AdminServiceImpl implements AdminService {
     private final ProductOptionDAO productOptionDAO;
     private final ProductFileDAO productFileDAO;
     private final ProductRegistrationDAO productRegistrationDAO;
+
+    @Override
+    public List<ProductDTO> getAllProduct() {
+        return productDAO.selectProductList();
+    }
 
     @Override
     public List<ProductRegistrationVO> getAllProductRegistration() {

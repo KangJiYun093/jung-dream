@@ -1,5 +1,6 @@
 package com.app.jungdream.service.admin;
 
+import com.app.jungdream.domain.dto.ProductDTO;
 import com.app.jungdream.domain.vo.ProductFileVO;
 import com.app.jungdream.domain.vo.ProductOptionVO;
 import com.app.jungdream.domain.vo.ProductRegistrationVO;
@@ -10,6 +11,8 @@ import java.util.List;
 
 @Service
 public interface AdminService {
+
+    public List<ProductDTO> getAllProduct();
 
     public List<ProductRegistrationVO> getAllProductRegistration();
 
