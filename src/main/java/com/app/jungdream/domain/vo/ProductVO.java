@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Setter
 public class ProductVO {
     private Long productId;
-    private String productStatus;
+    private String productSalesUnit;
     private String productTitle;
     private String productSeller;
     private Long productRegistrationId;

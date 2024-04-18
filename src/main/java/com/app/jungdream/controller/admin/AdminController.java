@@ -1,5 +1,6 @@
 package com.app.jungdream.controller.admin;
 
+import com.app.jungdream.domain.dto.ProductDTO;
 import com.app.jungdream.domain.vo.ProductRegistrationVO;
 import com.app.jungdream.service.admin.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -44,8 +45,10 @@ public class AdminController {
 
     @GetMapping("goods")
     public String goods(Model model) {
+        List<ProductDTO> productDTOS = adminService.getAllProduct();
         List<ProductRegistrationVO> productRegistrationVOS = adminService.getAllProductRegistration();
 
+        model.addAttribute("productDTOS", productDTOS);
         model.addAttribute("productRegistrationVOS", productRegistrationVOS);
 
         return "admin/admin-goods";
