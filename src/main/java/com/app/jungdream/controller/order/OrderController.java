@@ -39,7 +39,7 @@ public class OrderController {
         redirectAttributes.addFlashAttribute("orderInfo", orderInfo);
         orderService.saveOrder(orderVo);
         log.info("saveorder");
-        return new RedirectView("order-complete");
+        return new RedirectView("/order/order-complete");
     }
 
     @GetMapping("order-detail")

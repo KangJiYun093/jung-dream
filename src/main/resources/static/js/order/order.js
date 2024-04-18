@@ -3,13 +3,13 @@ $(function() {
     /* 위 주문자 정보와 동일하게 입력 체크박스 선택시 작동 */
     $('input[name=enterSame]').on('click', function() {
         if($(this).is(':checked')) {
-            $('input[name=receiveName]').val($('input[name=orderName]').val());
-            $("#receive-phone-start").val($("#order-phone-start").val()).prop("selected", true);
+            $('input[name=orderRecipientName]').val($('input[name=orderCustomerName]').val());
+            $("#receive-phone-start").val($("#orderPhoneStart").val()).prop("selected", true);
             $('input[name=receivePhoneMiddle]').val($('input[name=orderPhoneMiddle]').val());
             $('input[name=receivePhoneEnd]').val($('input[name=orderPhoneEnd]').val());
             $(this).prop('checked', true);
         } else {
-            $('input[name=receiveName]').val('');
+            $('input[name=orderRecipientName]').val('');
             $("#receive-phone-start option:eq(0)").prop("selected", true);
             $('input[name=receivePhoneMiddle]').val('');
             $('input[name=receivePhoneEnd]').val('');
@@ -60,11 +60,11 @@ $(function() {
 
     /* 주문하기 버튼 눌렀을 때 정상적으로 정보가 들어있는지 검사 후 submit */
     $('#order-btn').on('click', () => {
-        if(!$('input[name=orderName]').val()) {
+        if(!$('input[name=orderCustomerName]').val()) {
             // alert('주문자 정보 이름을 입력하세요');
             $('.text').text('주문자 정보 이름을 입력하세요');
             $('.modal-container').css('display', 'flex');
-            $('input[name=orderName]').focus();
+            $('input[name=order-customer-name]').focus();
             return;
         }
 
@@ -84,11 +84,11 @@ $(function() {
             return;
         }
 
-        if(!$('input[name=receiveName]').val()) {
+        if(!$('input[name=orderRecipientName]').val()) {
             // alert('배송지 정보 이름을 입력하세요');
             $('.text').text('배송지 정보 이름을 입력하세요');
             $('.modal-container').css('display', 'flex');
-            $('input[name=receiveName]').focus();
+            $('input[name=orderRecipientName]').focus();
             return;
         }
 
@@ -123,4 +123,40 @@ $(function() {
         $('.modal-container').hide();
     });
 
+    $('#find-address').on('click', () => {
+        /* 휴대폰 번호 합치기 */
+        var inputPhoneStart = $("select[name=orderPhoneStart] option:selected").text();
+        var inputPhoneMiddle = $('input[name=orderPhoneMiddle]').val();
+        var inputPhoneThird = $('input[name=orderPhoneEnd]').val();
+        var inputOrderPhone = inputPhoneStart + inputPhoneMiddle + inputPhoneThird;
+        // var inputOrderCustomerPhone = $('input[name=orderCustomerPhone]').val();
+
+        console.log(inputPhoneStart + inputPhoneMiddle + inputPhoneThird + "출력");
+        $('input[name=orderCustomerPhone]').val(inputOrderPhone);
+    })
+
+    $('.pay-check').on('click', () => {
+        /* 받는 이 주소 합치기 */
+        var inputRoadAddress = $('input[name=roadAddress]').val();
+        var inputDetailAddress = $('input[name=detailAddress]').val();
+        var inputAddress = inputRoadAddress + inputDetailAddress;
+
+        $('input[name=orderAddress]').val(inputAddress);
+        console.log(inputAddress);
+    })
+
+    $('#find-address').on('click', () => {
+        /* 휴대폰 번호 합치기 */
+        var inputReceiveStart = $("select[name=receivePhoneStart] option:selected").text();
+        var inputReceiveMiddle = $('input[name=receivePhoneMiddle]').val();
+        var inputReceiveThird = $('input[name=receivePhoneEnd]').val();
+        var inputReceivePhone = $('input[name=orderCustomerPhone]').val();
+        var inputReceivePhoneNumber = inputReceiveStart + inputReceiveMiddle + inputReceiveThird;
+
+        $('input[name=orderCustomerPhone]').val(inputReceivePhoneNumber);
+    })
+
+
 });
+
+

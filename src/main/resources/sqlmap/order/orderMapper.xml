@@ -13,7 +13,7 @@
                                order_recipient_phone, order_status, order_date, order_delivery_date, order_address,
                                order_quantity, order_total_price, product_id)
         VALUES (#{orderCustomerName}, #{orderCustomerPhone}, #{orderRecipientName},
-                #{orderRecipientPhone}, #{orderStatus}, current_timestamp, #{orderDeliveryDate}, #{orderAddress},
+                #{orderRecipientPhone}, #{orderStatus}, current_timestamp, current_timestamp, #{orderAddress},
                 #{orderQuantity}, #{orderTotalPrice}, #{productId})
     </insert>
 
