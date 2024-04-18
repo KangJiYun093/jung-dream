@@ -37,24 +37,20 @@ public class MainController {
         @GetMapping("notice")
         public String moveNotice(){ return "/customer/cust-notice";}
 
-        //      세션 인증(?)
-        @GetMapping("session-info")
-        public String sessionInfo(HttpServletRequest req) {
-                HttpSession session = req.getSession(false);
-
+        //      세션 인증
+        @GetMapping("/session-info")
+        public String sessionInfo(HttpSession session) {
                 if (session == null) {
-                        return "세션이 없음";
+                        throw new IllegalStateException("세션이 음따");
                 }
 
-                log.info("sessionId = {}", session.getId());
-                log.info("getMaxInactiveInterval={}", session.getMaxInactiveInterval());
-                log.info("creationTime={}", new Date(session.getCreationTime()));
-                log.info("lastAccessTime={}", new Date(session.getLastAccessedTime()));
+                System.out.println("sessionId = " + session.getId());
+                System.out.println("getMaxInactiveInterval=" + session.getMaxInactiveInterval());
+                System.out.println("creationTime=" + new Date(session.getCreationTime()));
+                System.out.println("lastAccessTime=" + new Date(session.getLastAccessedTime()));
 
                 return "세션";
-
         }
-
         /*
         *       appliction.properties
         *
