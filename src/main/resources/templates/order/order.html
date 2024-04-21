@@ -12,7 +12,7 @@
 <header id="header" th:replace="fragments/header :: header"></header>   `
     <div class="container">
 <!--        <form name="orderForm" method="post" th:href="@{order-save}">-->
-        <form name="orderForm" method="post" th:action="@{order}">
+        <form name="orderForm" method="post" th:action="@{/order/order}">
             <div class="order-title">
                 <h1>주문 페이지</h1>
             </div>
@@ -43,7 +43,7 @@
                             </select>&nbsp;-
                             <input type="text" name="orderPhoneMiddle" title="주문자 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
                             <input type="text" name="orderPhoneEnd" title="주문자 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
-                            <input type="text" name="orderCustomerPhone" value="" title="주문자 휴대전화" style="display:none">
+                            <input type="text" name="orderCustomerPhone" title="주문자 휴대전화" style="display:none">
                         </td>
                     </tr>
                 </tbody>
@@ -79,7 +79,7 @@
                             </select>&nbsp;-
                             <input type="text" name="receivePhoneMiddle" title="수취인 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
                             <input type="text" name="receivePhoneEnd" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
-                            <input type="hidden" name="orderRecipientPhone" value="01022222222" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
+                            <input type="hidden" name="orderRecipientPhone" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
                             <input type="hidden" name="orderStatus" value="주문완료" title="주문상태" style="width:70px;ime-mode:disabled" maxlength="4">
                         </td>
                     </tr>
@@ -97,7 +97,7 @@
                     <!-- 임시 확인용-->
                     <input type="hidden" name="orderQuantity" title="양" value="1" style="width:400px;margin-top:6px" class="detail-address">
                     <input type="hidden" name="orderTotalPrice" title="가격" value="10000" style="width:400px;margin-top:6px" class="detail-address">
-                    <input type="hidden" name="productId" title="제품번호" value="2" style="width:400px;margin-top:6px" class="detail-address">
+                    <input type="hidden" name="productId" title="제품번호" value="10" style="width:400px;margin-top:6px" class="detail-address">
                     <!-- <tr>
                         <th scope="row">배송 요청사항</th>
                         <td>
