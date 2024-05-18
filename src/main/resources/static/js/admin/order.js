@@ -2,7 +2,8 @@ $(function() {
 
     orders.forEach(order => {
         let text  = `
-            <tr>
+            <tr class="list">
+                <input type="hidden" class="id" value="${order.orderId}">
                 <td><input type="checkbox" name="check"></td>
                 <td>${order.orderId}</td>
                 <td>${order.orderCustomerName}</td>

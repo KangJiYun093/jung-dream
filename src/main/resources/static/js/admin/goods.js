@@ -3,9 +3,9 @@ $(document).ready(function() {
 
     products.forEach(product => {
         let text = `
-            <li class="goods">
+            <li class="goods list">
                 <input type="checkbox" name="check">
-                <input type="hidden" name="productId" value="${product.productId}">
+                <input type="hidden" class="id" name="productId" value="${product.productId}">
                 <div class="thumb">
                     <img src="/files/display?fileName=${product.productFilePath}">
                 </div>
