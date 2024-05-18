@@ -3,7 +3,10 @@
 
 <mapper namespace="com.app.jungdream.mapper.product.ProductFileMapper">
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
-
+    <select id="selectProductFile" resultType="productFileVO">
+        select product_file_id as file_id, product_uuid as uuid, product_file_path as file_path, product_file_name as file_name, product_id
+        from tbl_product_file where product_id = #{productId}
+    </select>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
     <insert id="insertProductFile">

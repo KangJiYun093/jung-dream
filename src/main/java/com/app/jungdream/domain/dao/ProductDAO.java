@@ -19,6 +19,10 @@ public class ProductDAO {
         return productMapper.selectProductList();
     }
 
+    public ProductDTO selectProduct(Long productId) {
+        return productMapper.selectProduct(productId);
+    }
+
     public Long selectProductId() {
         return productMapper.selectProductId();
     }

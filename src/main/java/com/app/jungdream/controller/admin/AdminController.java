@@ -1,6 +1,8 @@
 package com.app.jungdream.controller.admin;
 
+import com.app.jungdream.domain.dto.OrderDTO;
 import com.app.jungdream.domain.dto.ProductDTO;
+import com.app.jungdream.domain.vo.OrderVO;
 import com.app.jungdream.domain.vo.ProductRegistrationVO;
 import com.app.jungdream.service.admin.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -55,7 +57,11 @@ public class AdminController {
     }
 
     @GetMapping("order")
-    public String order() {
-        return "admin/order";
+    public String order(Model model) {
+        List<OrderDTO> orderDTOS = adminService.getAllOrder();
+
+        model.addAttribute("orderDTOS", orderDTOS);
+
+        return "admin/admin-order";
     }
 }
