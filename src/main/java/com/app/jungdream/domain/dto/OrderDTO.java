@@ -16,9 +16,10 @@ public class OrderDTO {
     private String orderStatus;
     private String orderDate;
     private String orderDeliveryDate;
+    private String orderZipcode;
     private String orderAddress;
     private Integer orderQuantity;
     private Integer orderTotalPrice;
-    private Long productId;
+    private Long productRegistrationId;
     private String productTitle;
 }
