@@ -13,13 +13,27 @@
 });
 
 /* 개별 선택할때 전체 선택 처리 */
-$("input[name=check]").click(function() {
+$(document).on('click', 'input[name=check]', function() {
     var total = $("input[name=check]").length;
     var checked = $("input[name=check]:checked").length;
-    
+
     if(total != checked) {
         $(".all-check").prop("checked", false);
     } else {
         $(".all-check").prop("checked", true);
     }
+});
+
+function selectCheckbox() {
+    let arr = [];
+    $('input[name=check]').each((i, data) => {
+        if($(data).is(':checked')) {
+            arr[i] = $(data).closest('.list').find('.id').val();
+        }
+    });
+    console.log(arr)
+}
+
+$('.delete-button').on('click', () => {
+    selectCheckbox();
 });

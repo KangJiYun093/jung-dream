@@ -2,8 +2,8 @@ $(function() {
 
     productRegistrations.forEach(productRegistration => {
         let text = `
-            <tr class="registration-list">
-                <input type="hidden" value="${productRegistration.productRegistrationId}" id="product-registration-id">
+            <tr class="registration-list list">
+                <input type="hidden" value="${productRegistration.productRegistrationId}" id="product-registration-id" class="id">
                 <td><input type="checkbox" name="check"></td>
                 <td>${productRegistration.productRegistrationName}</td>
                 <td>${productRegistration.productRegistrationSpecification}</td>
