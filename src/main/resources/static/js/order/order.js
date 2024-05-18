@@ -60,6 +60,8 @@ $(function() {
 
     /* 주문하기 버튼 눌렀을 때 정상적으로 정보가 들어있는지 검사 후 submit */
     $('#order-btn').on('click', () => {
+
+
         if(!$('input[name=orderCustomerName]').val()) {
             // alert('주문자 정보 이름을 입력하세요');
             $('.text').text('주문자 정보 이름을 입력하세요');
@@ -116,45 +118,65 @@ $(function() {
             return;
         }
 
+        var inputPhoneStart = $("select[name=orderPhoneStart] option:selected").text();
+        var inputPhoneMiddle = $('input[name=orderPhoneMiddle]').val();
+        var inputPhoneThird = $('input[name=orderPhoneEnd]').val();
+        var inputOrderPhone = inputPhoneStart + inputPhoneMiddle + inputPhoneThird;
+        var inputOrderCustomerPhone = $('input[name=inputOrderPhone]').val();
+        $('input[name=orderCustomerPhone]').val(inputOrderPhone);
+
+        var inputRoadAddress = $('input[name=roadAddress]').val();
+        var inputDetailAddress = $('input[name=detailAddress]').val();
+        var inputAddress = inputRoadAddress + inputDetailAddress;
+        $('input[name=orderAddress]').val(inputAddress);
+
+        var inputReceiveStart = $("select[name=receivePhoneStart] option:selected").text();
+        var inputReceiveMiddle = $('input[name=receivePhoneMiddle]').val();
+        var inputReceiveThird = $('input[name=receivePhoneEnd]').val();
+        var inputReceivePhone = $('input[name=orderRecipientPhone]').val();
+        var inputReceivePhoneNumber = inputReceiveStart + inputReceiveMiddle + inputReceiveThird;
+        $('input[name=orderRecipientPhone]').val(inputReceivePhoneNumber);
+
         document.orderForm.submit();
     });
 
     $('.modal-btn').on('click', () => {
         $('.modal-container').hide();
     });
-
-    $('#find-address').on('click', () => {
-        /* 휴대폰 번호 합치기 */
-        var inputPhoneStart = $("select[name=orderPhoneStart] option:selected").text();
-        var inputPhoneMiddle = $('input[name=orderPhoneMiddle]').val();
-        var inputPhoneThird = $('input[name=orderPhoneEnd]').val();
-        var inputOrderPhone = inputPhoneStart + inputPhoneMiddle + inputPhoneThird;
-        // var inputOrderCustomerPhone = $('input[name=orderCustomerPhone]').val();
-
-        console.log(inputPhoneStart + inputPhoneMiddle + inputPhoneThird + "출력");
-        $('input[name=orderCustomerPhone]').val(inputOrderPhone);
-    })
-
-    $('.pay-check').on('click', () => {
-        /* 받는 이 주소 합치기 */
-        var inputRoadAddress = $('input[name=roadAddress]').val();
-        var inputDetailAddress = $('input[name=detailAddress]').val();
-        var inputAddress = inputRoadAddress + inputDetailAddress;
-
-        $('input[name=orderAddress]').val(inputAddress);
-        console.log(inputAddress);
-    })
-
-    $('#find-address').on('click', () => {
-        /* 휴대폰 번호 합치기 */
-        var inputReceiveStart = $("select[name=receivePhoneStart] option:selected").text();
-        var inputReceiveMiddle = $('input[name=receivePhoneMiddle]').val();
-        var inputReceiveThird = $('input[name=receivePhoneEnd]').val();
-        var inputReceivePhone = $('input[name=orderRecipientPhone]').val();
-        var inputReceivePhoneNumber = inputReceiveStart + inputReceiveMiddle + inputReceiveThird;
-
-        $('input[name=orderRecipientPhone]').val(inputReceivePhoneNumber);
-    })
+    //
+    // $('#find-address').on('click', () => {
+    //     /* 휴대폰 번호 합치기 */
+    //     var inputPhoneStart = $("select[name=orderPhoneStart] option:selected").text();
+    //     var inputPhoneMiddle = $('input[name=orderPhoneMiddle]').val();
+    //     var inputPhoneThird = $('input[name=orderPhoneEnd]').val();
+    //     var inputOrderPhone = inputPhoneStart + inputPhoneMiddle + inputPhoneThird;
+    //     // var inputOrderCustomerPhone = $('input[name=orderCustomerPhone]').val();
+    //
+    //     console.log(inputPhoneStart + inputPhoneMiddle + inputPhoneThird + "출력");
+    //     console.log(inputOrderPhone);
+    //     // $('input[name=orderCustomerPhone]').val(inputOrderPhone);
+    // })
+    //
+    // $('.pay-check').on('click', () => {
+    //     /* 받는 이 주소 합치기 */
+    //     var inputRoadAddress = $('input[name=roadAddress]').val();
+    //     var inputDetailAddress = $('input[name=detailAddress]').val();
+    //     var inputAddress = inputRoadAddress + inputDetailAddress;
+    //
+    //     $('input[name=orderAddress]').val(inputAddress);
+    //     console.log(inputAddress);
+    // })
+    //
+    // $('#find-address').on('click', () => {
+    //     /* 휴대폰 번호 합치기 */
+    //     var inputReceiveStart = $("select[name=receivePhoneStart] option:selected").text();
+    //     var inputReceiveMiddle = $('input[name=receivePhoneMiddle]').val();
+    //     var inputReceiveThird = $('input[name=receivePhoneEnd]').val();
+    //     var inputReceivePhone = $('input[name=orderRecipientPhone]').val();
+    //     var inputReceivePhoneNumber = inputReceiveStart + inputReceiveMiddle + inputReceiveThird;
+    //
+    //     // $('input[name=orderRecipientPhone]').val(inputReceivePhoneNumber);
+    // })
 
 
 });

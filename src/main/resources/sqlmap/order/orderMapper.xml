@@ -17,11 +17,11 @@
     <!-- 상품 주문 -->
     <insert id="insertOrder">
         insert into tbl_order (order_customer_name, order_customer_phone, order_recipient_name,
-                               order_recipient_phone, order_status, order_date, order_delivery_date, order_address,
-                               order_quantity, order_total_price, product_id)
+                               order_recipient_phone, order_status, order_date, order_delivery_date, order_zipcode, order_address,
+                               order_quantity, order_total_price, product_registration_id)
         VALUES (#{orderCustomerName}, #{orderCustomerPhone}, #{orderRecipientName},
-                #{orderRecipientPhone}, #{orderStatus}, current_timestamp, current_timestamp, #{orderAddress},
-                #{orderQuantity}, #{orderTotalPrice}, #{productId})
+                #{orderRecipientPhone}, #{orderStatus}, current_timestamp, current_timestamp, #{orderZipcode}, #{orderAddress},
+                #{orderQuantity}, #{orderTotalPrice}, #{productRegistrationId})
     </insert>
 
 

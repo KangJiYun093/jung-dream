@@ -44,7 +44,6 @@
                             </select>&nbsp;-
                             <input type="text" name="orderPhoneMiddle" title="주문자 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
                             <input type="text" name="orderPhoneEnd" title="주문자 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
-                            <input type="text" name="orderCustomerPhone" value="" title="주문자 휴대전화" style="display:none">
                             <input type="text" name="orderCustomerPhone" title="주문자 휴대전화" style="display:none">
                         </td>
                     </tr>
@@ -81,18 +80,14 @@
                             </select>&nbsp;-
                             <input type="text" name="receivePhoneMiddle" title="수취인 휴대전화 가운데자리" style="width:70px;ime-mode:disabled" maxlength="4">&nbsp;-
                             <input type="text" name="receivePhoneEnd" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
-<<<<<<< HEAD
-                            <input type="hidden" name="orderRecipientPhone" title="수취인 휴대전화 뒷자리" value="" style="width:70px;ime-mode:disabled" maxlength="4">
-=======
-                            <input type="hidden" name="orderRecipientPhone" title="수취인 휴대전화 뒷자리" style="width:70px;ime-mode:disabled" maxlength="4">
->>>>>>> origin/master
+                            <input type="hidden" name="orderRecipientPhone" title="수취인 휴대전화" style="width:70px;ime-mode:disabled" maxlength="4">
                             <input type="hidden" name="orderStatus" value="주문완료" title="주문상태" style="width:70px;ime-mode:disabled" maxlength="4">
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">배송지 <em>*</em></th>
                         <td>
-                            <input type="text" id="postcode" title="배송지 우편번호" placeholder="우편번호" style="width:70px" readonly>
+                            <input type="text" id="postcode" name="orderZipcode" title="배송지 우편번호" placeholder="우편번호" style="width:70px" readonly>
                             <button type="button" class="btnTypeA" id="find-address">우편번호찾기</button><br>
                             <input type="text" id="roadAddress" name="roadAddress" title="배송지 주소" placeholder="배송지 주소" style="width:400px;margin-top:6px" readonly><br>
                             <input type="text" name="detailAddress" title="배송지 상세주소" style="width:400px;margin-top:6px" placeholder="상세주소 입력" class="detail-address">
@@ -102,10 +97,7 @@
                     <!-- 임시 확인용-->
                     <input type="hidden" name="orderQuantity" title="양" value="1" style="width:400px;margin-top:6px" class="detail-address">
                     <input type="hidden" name="orderTotalPrice" title="가격" value="10000" style="width:400px;margin-top:6px" class="detail-address">
-<<<<<<< HEAD
-                    <input type="hidden" name="productId" title="제품번호" value="2" style="width:400px;margin-top:6px" class="detail-address">
-=======
-                    <input type="hidden" name="productId" title="제품번호" value="10" style="width:400px;margin-top:6px" class="detail-address">
+                    <input type="hidden" name="productRegistrationId" title="제품번호" value="1" style="width:400px;margin-top:6px" class="detail-address">
                     <!-- <tr>
                         <th scope="row">배송 요청사항</th>
                         <td>
@@ -120,7 +112,6 @@
                             <input type="text" name="" id="" style="display:none; margin-top:5px;width:400px;">
                         </td>
                     </tr> -->
->>>>>>> origin/master
                 </tbody>
             </table>
             
