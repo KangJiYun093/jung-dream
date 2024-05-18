@@ -14,9 +14,9 @@
 
     <!-- 상품 조회-->
     <select id="selectProduct" resultType="productDTO">
-        select product_id, product_status, product_title, prodct_seller, product_registration_id,
-               product_option_specification, product_option_weight, product_option_quantity, product_option_price
-        from tbl_product where product_id = #{productId}
+        select product_id, product_sales_unit, product_title, product_seller, product_registration_id, product_status,
+               (select product_registration_name from tbl_product_registration where product_registration_id = tp.product_registration_id) as product_registration_name
+        from tbl_product tp where product_id = #{productId}
     </select>
 
     <!-- 현재 상품의 id 조회 -->

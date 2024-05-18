@@ -5,6 +5,7 @@ $(document).ready(function() {
         let text = `
             <li class="goods">
                 <input type="checkbox" name="check">
+                <input type="hidden" name="productId" value="${product.productId}">
                 <div class="thumb">
                     <img src="/files/display?fileName=${product.productFilePath}">
                 </div>
@@ -17,6 +18,152 @@ $(document).ready(function() {
         $('.goods-list').append(text);
     });
 
+    $('.goods').on('click', function() {
+        $.ajax({
+            url: "/admins/get/product",
+            type: "post",
+            data: { productId : $(this).find('input[name=productId]').val() },
+            success: function(result) {
+                if(result) {
+                    console.log(result);
+
+                    let updateModal = `
+                        <div class="detail-content">
+                            <p>상품 상세 페이지</p>
+                            <form action="" method="post">
+                                <div class="detail-wrapper">
+                                    <div class="form-group">
+                                        <label>품종</label> 
+                                        <input type="hidden" class="form-control" name="productRegistrationId" value="${result.productRegistrationId}">
+                                        <input type="text" class="form-control" name="productRegistrationName" value="${result.productRegistrationName}" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>제목</label> 
+                                        <input type="text" class="form-control" name="productTitle" value="${result.productTitle}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>판매자</label> 
+                                        <input type="text" class="form-control" name="productSeller" value="${result.productSeller}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>판매단위</label> 
+                                        <input type="text" class="form-control" name="productSalesUnit" value="${result.productSalesUnit}">
+                                    </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <label>중량/용량</label> -->
+<!--                                        <input class="form-control" name="weigh-detail">-->
+<!--                                    </div>-->
+                                    <div>
+                                    <!--<div class="option-kind">-->`;
+
+                    let productOptions = result.productOptionVOS;
+
+                    productOptions.forEach(productOption => {
+                        let option = `
+                            <div class="option-kind">
+                            `;
+                            if(productOption.productOptionSpecification) {
+                                option += `
+                                    <div class="form-group">
+                                        <label>규격</label>
+                                        <input type="text" class="form-control" name="productOptionSpecification" value="${productOption.productOptionSpecification}">
+                                    </div>
+                                `;
+                            }
+                            if(productOption.productOptionWeight) {
+                                option += `
+                                    <div class="form-group">
+                                        <label>키로수</label>
+                                        <input type="text" class="form-control" name="productOptionWeight" value="${productOption.productOptionWeight}">
+                                    </div>
+                                `;
+                            }
+                            if(productOption.productOptionQuantity) {
+                                option += `
+                                    <div class="form-group">
+                                        <label>개수</label>
+                                        <input type="text" class="form-control" name="productOptionQuantity" value="${productOption.productOptionQuantity}">
+                                    </div>
+                                `;
+                            }
+                            if(productOption.productOptionPrice) {
+                                option += `
+                                    <div class="form-group">
+                                        <label>가격</label>
+                                        <input type="text" class="form-control" name="productOptionPrice" value="${productOption.productOptionPrice}">
+                                    </div>
+                                `;
+                            }
+                        option += `</div>`;
+
+                        updateModal += option;
+                    });
+                                updateModal += `
+<!--                                    </div>-->
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="detail-images">
+                                            <label>첨부 파일</label>
+                                            <label for="update-first">
+                                                <span class="image-div">
+                                                    <img src="/files/display?fileName=${result.productFileVOS[0].filePath}">
+                                                </span>
+                                                <input type="file" class="image-upload" accept="image/*" id="update-first" style="display: none">
+                                                <input type="hidden" class="uuid">
+                                                <input type="hidden" class="filePath">
+                                            </label>
+                                            <label for="update-second">
+                                                <span class="image-div">
+                                                    <img src="/files/display?fileName=${result.productFileVOS[1].filePath}">
+                                                </span>
+                                                <input type="file" class="image-upload" accept="image/*" id="update-second" style="display: none">
+                                                <input type="hidden" class="uuid">
+                                                <input type="hidden" class="filePath">
+                                            </label>
+                                            <label for="update-third">
+                                                <span class="image-div">
+                                                    <img src="/files/display?fileName=${result.productFileVOS[2].filePath}">
+                                                </span>
+                                                <input type="file" class="image-upload" accept="image/*" id="update-third" style="display: none">
+                                                <input type="hidden" class="uuid">
+                                                <input type="hidden" class="filePath">
+                                            </label>
+                                            <label for="update-fourth">
+                                                <span class="image-div">
+                                                    <img src="/files/display?fileName=${result.productFileVOS[3].filePath}">
+                                                </span>
+                                                <input type="file" class="image-upload" accept="image/*" id="update-fourth" style="display: none">
+                                                <input type="hidden" class="uuid">
+                                                <input type="hidden" class="filePath">
+                                            </label>
+                                            <label for="update-fifth">
+                                                <span class="image-div">
+                                                    <img src="/files/display?fileName=${result.productFileVOS[4].filePath}">
+                                                </span>
+                                                <input type="file" class="image-upload" accept="image/*" id="update-fifth" style="display: none">
+                                                <input type="hidden" class="uuid">
+                                                <input type="hidden" class="filePath">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-buttons">
+                                        <button class="confirm-btn">수정</button>
+                                        <button type="button" class="cancel-btn">취소</button>
+                                    </div>
+                                </div>
+                        </div>
+                    `;
+
+                    $('#detail-modal').append(updateModal);
+                    $('#detail-modal').show();
+                }
+                // document.location.reload(true);
+            }
+        });
+
+    });
+
+    /* 등록하기 */
     let text = `<div class="option-kind option-class" id="insert-option-kind">`;
 
     if (productRegistrations[0].productRegistrationSpecification == 'Y') {
@@ -143,6 +290,7 @@ $(document).ready(function() {
         });
     });
 
+    /* 등록 버튼 클릭 */
     $('#insert-button').on('click', () => {
         if(!$('input[name=title]').val()) {
             alert('제목을 입력하세요');

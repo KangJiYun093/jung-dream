@@ -22,6 +22,7 @@
         <typeAlias type="com.app.jungdream.domain.vo.NoticeVO" alias="noticeVO"/>
         <typeAlias type="com.app.jungdream.domain.vo.NoticeFileVO" alias="noticeFileVO"/>
         <typeAlias type="com.app.jungdream.domain.vo.OrderVO" alias="orderVO"/>
+        <typeAlias type="com.app.jungdream.domain.dto.OrderDTO" alias="orderDTO"/>
         <typeAlias type="com.app.jungdream.domain.vo.ProductVO" alias="productVO"/>
         <typeAlias type="com.app.jungdream.domain.dto.ProductDTO" alias="productDTO"/>
         <typeAlias type="com.app.jungdream.domain.vo.ProductOptionVO" alias="productOptionVO"/>

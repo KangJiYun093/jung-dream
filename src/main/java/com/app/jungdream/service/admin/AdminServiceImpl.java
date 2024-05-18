@@ -1,14 +1,9 @@
 package com.app.jungdream.service.admin;
 
-import com.app.jungdream.domain.dao.ProductDAO;
-import com.app.jungdream.domain.dao.ProductFileDAO;
-import com.app.jungdream.domain.dao.ProductOptionDAO;
-import com.app.jungdream.domain.dao.ProductRegistrationDAO;
+import com.app.jungdream.domain.dao.*;
+import com.app.jungdream.domain.dto.OrderDTO;
 import com.app.jungdream.domain.dto.ProductDTO;
-import com.app.jungdream.domain.vo.ProductFileVO;
-import com.app.jungdream.domain.vo.ProductOptionVO;
-import com.app.jungdream.domain.vo.ProductRegistrationVO;
-import com.app.jungdream.domain.vo.ProductVO;
+import com.app.jungdream.domain.vo.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -24,10 +19,26 @@ public class AdminServiceImpl implements AdminService {
     private final ProductOptionDAO productOptionDAO;
     private final ProductFileDAO productFileDAO;
     private final ProductRegistrationDAO productRegistrationDAO;
+    private final OrderDAO orderDAO;
 
     @Override
     public List<ProductDTO> getAllProduct() {
         return productDAO.selectProductList();
+    }
+
+    @Override
+    public ProductDTO getProduct(Long productId) {
+        return productDAO.selectProduct(productId);
+    }
+
+    @Override
+    public List<ProductOptionVO> getAllProductOption(Long productId) {
+        return productOptionDAO.selectProductOption(productId);
+    }
+
+    @Override
+    public List<ProductFileVO> getAllProductFile(Long productId) {
+        return productFileDAO.selectProductFile(productId);
     }
 
     @Override
@@ -65,6 +76,18 @@ public class AdminServiceImpl implements AdminService {
         productFileVOS.forEach(productFileVO -> {
             productFileVO.setProductId(productId);
             productFileDAO.insertProductFile(productFileVO);
+        });
+    }
+
+    @Override
+    public List<OrderDTO> getAllOrder() {
+        return orderDAO.selectOrderList();
+    }
+
+    @Override
+    public void deleteOrder(List<Long> orderIds) {
+        orderIds.forEach(orderId -> {
+            orderDAO.deleteOrder(orderId);
         });
     }
 }
