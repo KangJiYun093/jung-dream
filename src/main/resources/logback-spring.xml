@@ -133,7 +133,7 @@
     <!-- 프로필별 쿼리 로그 설정 -->
     <springProfile name="local">
         <logger name="jdbc.sqlonly" level="off"/>
-        <logger name="jdbc.sqltiming" level="info"/>   <!-- 쿼리 수행 시간 -->
+        <logger name="jdbc.sqltiming" level="debug"/>   <!-- 쿼리 수행 시간 -->
         <logger name="jdbc.audit" level="off"/>
         <logger name="jdbc.resultset" level="off"/>
         <logger name="jdbc.resultsettable" level="debug"/>

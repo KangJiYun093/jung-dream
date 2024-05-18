@@ -3,7 +3,10 @@
 
 <mapper namespace="com.app.jungdream.mapper.product.ProductOptionMapper">
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::SELECT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
-
+    <select id="selectProductOption" resultType="productOptionVO">
+        select product_option_id, product_option_specification, product_option_weight, product_option_quantity, product_option_price, product_id
+        from tbl_product_option where product_id = #{productId}
+    </select>
 
     <!--  :::::::::::::::::::::::::::::::::::::::::::::::::::INSERT:::::::::::::::::::::::::::::::::::::::::::::::::::  -->
     <insert id="insertProductOption">

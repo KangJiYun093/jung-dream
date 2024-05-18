@@ -150,10 +150,10 @@ $(function() {
         var inputReceiveStart = $("select[name=receivePhoneStart] option:selected").text();
         var inputReceiveMiddle = $('input[name=receivePhoneMiddle]').val();
         var inputReceiveThird = $('input[name=receivePhoneEnd]').val();
-        var inputReceivePhone = $('input[name=orderCustomerPhone]').val();
+        var inputReceivePhone = $('input[name=orderRecipientPhone]').val();
         var inputReceivePhoneNumber = inputReceiveStart + inputReceiveMiddle + inputReceiveThird;
 
-        $('input[name=orderCustomerPhone]').val(inputReceivePhoneNumber);
+        $('input[name=orderRecipientPhone]').val(inputReceivePhoneNumber);
     })
 
 
